@@ -8,12 +8,10 @@ const NavBar = () => {
         <div>Menu</div>
         <div>Shakes & Cocktails</div>
         <div>Locations</div>
-
         <div className="bji-icon-container">
           <img className="bji-icon" src={bji} />
           <p>Burger Joint</p>
         </div>
-
         <div>Join BurgerJoint?</div>
         <div>Contact Us</div>
         <div>Order Now</div>
