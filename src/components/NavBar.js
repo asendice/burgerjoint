@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import bji from "../img/bji.png";
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
+
   const toggleNavMenu = () => {
     setShowMenu(!showMenu);
+    console.log(showMenu, "showMenu")
   };
 
   return (
@@ -15,12 +17,7 @@ const NavBar = () => {
           <img className="bji-icon" src={bji} />
           <p>Burger Joint</p>
         </div>
-        <ul
-          className="nav-links"
-          style={{
-            display: `${showMenu ? "none" : "flex"}`,
-          }}
-        >
+        <ul className="nav-links" id={showMenu === true ? "hidden" : ""}>
           <li>
             <a>Menu</a>
           </li>
