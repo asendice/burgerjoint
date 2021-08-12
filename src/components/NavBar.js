@@ -4,10 +4,8 @@ import bji from "../img/bji.png";
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
-
   const toggleNavMenu = () => {
     setShowMenu(!showMenu);
-    console.log(showMenu, "showMenu")
   };
 
   return (
