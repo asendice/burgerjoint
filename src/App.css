@@ -27,6 +27,7 @@
 .nav-links a {
   transition: all 0.8s ease;
   font-size: 1.3rem;
+  font-family: "Roboto", sans-serif;
 }
 
 .nav-links a:hover {
@@ -116,28 +117,10 @@
   text-shadow: -6px 4px #f58220;
 }
 
-.locations-btn {
-  display: flex;
-  justify-content: center;
-  font-family: "Roboto", sans-serif !important;
-  padding: 20px;
-  z-index: 1;
-  border: #f58220 solid 1px;
-  border-radius: 10px;
-  background-color: #fff;
-  font-size: 2rem;
-  background-color: #f58220;
-  color: #fff;
-  align-self: center;
-  transition: 0.3s ease-in-out;
-}
-
-.locations-btn:hover,
+button:hover,
 :focus {
   cursor: pointer;
   transform: scale(1.1);
-  opacity: 0.9;
-  color: black;
 }
 
 .locations-btn p {
@@ -150,14 +133,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 50vh;
   background-color: #f2f4f3;
 }
 
-.featured-title {
+.landing-section-title {
   font-family: "Roboto", sans-serif;
   color: rgb(53, 53, 53);
   font-size: 2.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .card-container {
@@ -173,10 +157,16 @@
   height: 255px;
   width: 340px;
   border-radius: 10px;
-  margin: 5px;
+  margin: 10px;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .card h2 {
@@ -190,7 +180,7 @@
   align-self: flex-end;
 }
 
-.featured button {
+button {
   font-family: "Roboto", sans-serif;
   padding: 20px;
   background-color: #f58220;
@@ -199,6 +189,62 @@
   border: solid 1px #f58220;
   font-size: 1.3rem;
   margin-top: 20px;
+  transition: 0.3s ease-in-out;
+  align-self: center;
+}
+
+.gram-container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  background-color: #f2f4f3;
+}
+
+.img-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gram-item {
+  height: 250px;
+  width: 250px;
+  background-size: contain;
+}
+
+.gram-item-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  height: 250px;
+  width: 250px;
+  background-color: rgb(0, 0, 0);
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+}
+
+.gram-item-overlay h4 {
+  margin: 5px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.gram-item:hover .gram-item-overlay {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.gram-item-comment {
+  padding: 20px;
+}
+
+.likes-comments {
+  display: flex;
+  align-items: center;
 }
 
 @media only screen and (max-width: 900px) {
@@ -219,9 +265,7 @@
     background-color: rgb(53, 53, 53);
     display: flex;
     flex-direction: column;
-    transform-origin: top;
-
-    /* transform: scaleY(0); */
+    transition: 0.4s ease-in-out;
   }
 
   .nav-links {
@@ -231,5 +275,21 @@
   .nav-burger-container {
     display: block;
     flex: 1;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .title h1 {
+    font-size: 3rem;
+  }
+
+  .card {
+    padding: 24px;
+    height: 205px;
+    width: 290px;
+  }
+
+  .featured-title {
+    font-size: 1.8rem;
   }
 }

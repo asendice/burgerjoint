@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "./NavBar";
 import Landing from "./Landing";
 import Featured from "./Featured";
+import Gram from "./Gram";
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       <NavBar />
       <Landing />
       <Featured />
+      <Gram />
     </div>
   );
 };

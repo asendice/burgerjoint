@@ -7,9 +7,7 @@ const Landing = () => {
         <h1>MOUTH </h1>
         <h1> WATERING </h1>
         <h1> TASTE</h1>
-        <div className="locations-btn">
-          <p>Locations</p>
-        </div>
+        <button>Order Now</button>
       </div>
     </div>
   );
