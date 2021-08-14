@@ -5,7 +5,7 @@ import fries from "../img/spfries.png";
 
 const Featured = () => {
   return (
-    <div className="featured">
+    <div className="landing-section">
       <h1 className="landing-section-title">Burger Joint's Features </h1>
       <div className="card-container">
         <div className="card" style={{ backgroundColor: "#F8AC6A" }}>

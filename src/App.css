@@ -127,7 +127,7 @@ button:hover,
   align-self: center;
 }
 
-.featured {
+.landing-section {
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -193,20 +193,11 @@ button {
   align-self: center;
 }
 
-.gram-container {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 50vh;
-  background-color: #f2f4f3;
-}
-
 .img-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 25px;
 }
 
 .gram-item {
@@ -247,6 +238,36 @@ button {
   align-items: center;
 }
 
+.location-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.location-container div {
+  margin: 15px;
+}
+
+.location-map {
+  height: 400px;
+  width: 500px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.location-card {
+  font-family: "Source Sans Pro", sans-serif;
+  background: #fff;
+  height: 400px;
+  width: 500px;
+  border: solid rgb(0, 0, 0, 0.3) 1px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out; 
+}
+
 @media only screen and (max-width: 900px) {
   .title h1 {
     font-size: 4rem;
@@ -276,6 +297,11 @@ button {
     display: block;
     flex: 1;
   }
+
+  .location-map {
+    height: 300px;
+    width: 500px;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -291,5 +317,9 @@ button {
 
   .featured-title {
     font-size: 1.8rem;
+  }
+  .location-map {
+    height: 300px;
+    width: 320px;
   }
 }

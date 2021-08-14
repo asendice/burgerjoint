@@ -78,20 +78,15 @@ const Gram = () => {
   ];
 
   return (
-    <div className="gram-container">
-      <div className="landing-section-title"> 
+    <div className="landing-section">
+      <h1 className="landing-section-title">
         #burgerjoint
         <FaInstagram />
-        </div>
+      </h1>
       <div className="img-container">
         {instaGramItems.map((gram) => {
           return (
             <>
-              {/* <img
-              className="gram-item"
-              src={gram.img}
-              // style={{ background: `url(${gram.img})` }}
-            /> */}
               <div
                 className="gram-item"
                 style={{ backgroundImage: `url(${gram.img})` }}
@@ -103,7 +98,6 @@ const Gram = () => {
                     <FaRegComment />
                     <h4>{gram.comments}</h4>
                   </div>
-
                   <h4 className="gram-item-comment">{gram.msg}</h4>
                 </div>
               </div>

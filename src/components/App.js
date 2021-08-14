@@ -3,6 +3,7 @@ import NavBar from "./NavBar";
 import Landing from "./Landing";
 import Featured from "./Featured";
 import Gram from "./Gram";
+import Location from "./Location";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Landing />
       <Featured />
       <Gram />
+      <Location />
     </div>
   );
 };
