@@ -7,12 +7,12 @@ const Location = () => {
       lng: -73.935242,
       lat: 40.73061,
     },
-    zoom: 11,
+    zoom: 5,
   };
 
   return (
     <div className="landing-section">
-      <h1 className="landing-section-title">Location</h1>
+      <h1 className="landing-section-title">Locations</h1>
       <div className="location-container">
         <div className="location-map">
           <GoogleMapReact
@@ -28,9 +28,9 @@ const Location = () => {
           <h1>Burger Joint Tahoe</h1>
           <p>493 Brassie Ave, Kings Beach Ca 96143</p>
           <p>(530) 546-7443 </p>
-          <button>Order Now</button>
           <h4>Sunday - Saturday</h4>
           <p>(11:00am - 6:00pm)</p>
+          <button>Order Now</button>
         </div>
       </div>
     </div>
