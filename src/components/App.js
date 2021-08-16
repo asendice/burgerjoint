@@ -4,6 +4,7 @@ import Landing from "./Landing";
 import Featured from "./Featured";
 import Gram from "./Gram";
 import Location from "./Location";
+import Footer from "./Footer";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Featured />
       <Gram />
       <Location />
+      <Footer />
     </div>
   );
 };

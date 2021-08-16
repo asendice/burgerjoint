@@ -265,7 +265,50 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: all 0.3s ease-in-out; 
+  transition: all 0.3s ease-in-out;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(53, 53, 53);
+  justify-content: space-around;
+  align-items: center;
+  padding: 25px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer li {
+  text-decoration: none;
+  list-style: none;
+  color: #f2f4f3;
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.footer li a {
+  font-family: "Roboto", sans-serif;
+}
+
+.footer-icons {
+  display: flex; 
+  justify-content: space-evenly;
+  width: 25%;
+}
+
+.footer-icons span{
+  display: flex;
+  color: #fff;
+  font-size: 2rem;
+  border: solid #fff 1px;
+  border-radius: 100%;
+  padding: 12px;
 }
 
 @media only screen and (max-width: 900px) {
@@ -301,6 +344,15 @@ button {
   .location-map {
     height: 300px;
     width: 500px;
+  }
+
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footer-icons {
+    margin-top: 20px;
   }
 }
 
