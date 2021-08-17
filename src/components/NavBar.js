@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import bji from "../img/bji.png";
 
 const NavBar = () => {
@@ -12,27 +13,28 @@ const NavBar = () => {
     <>
       <div className="navbar">
         <div className="bji-icon-container">
-          <img className="bji-icon" src={bji} />
-          <p>Burger Joint</p>
+          <NavLink className="bji-icon-container-link" to="/">
+            <img className="bji-icon" src={bji} />
+            <p>Burger Joint</p>
+          </NavLink>
         </div>
         <ul className="nav-links" id={showMenu === true ? "hidden" : ""}>
           <li>
-            <a>Menu</a>
+            <NavLink className="nav-links-link" to="/menu">
+              Menu
+            </NavLink>
           </li>
           <li>
-            <a>Beverages</a>
+            <NavLink className="nav-links-link" to="/">Membership</NavLink>
           </li>
           <li>
-            <a>Locations</a>
+            <NavLink className="nav-links-link" to="/">Locations</NavLink>
           </li>
           <li>
-            <a>Member ?</a>
+            <NavLink className="nav-links-link" to="/">Contact Us</NavLink>
           </li>
           <li>
-            <a>Contact Us</a>
-          </li>
-          <li>
-            <a>Order Now</a>
+            <NavLink className="nav-links-link" to="/"><button className="nav-btn">Order Now</button></NavLink>
           </li>
         </ul>
         <div className="nav-burger-container">

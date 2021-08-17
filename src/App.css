@@ -19,20 +19,24 @@
 }
 
 .nav-links li {
-  text-decoration: none;
   list-style: none;
-  color: #fff;
 }
 
-.nav-links a {
+.nav-links-link {
   transition: all 0.4s ease;
   font-size: 1.3rem;
   font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  color: #fff;
 }
 
 .nav-links a:hover {
   color: #f58220;
   cursor: pointer;
+}
+
+.nav-btn {
+  margin-top: 0px;
 }
 
 .navbar p {
@@ -67,9 +71,14 @@
 }
 
 .bji-icon-container {
+  flex: 1;
+}
+
+.bji-icon-container-link {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 10px;
 }
 
@@ -80,7 +89,6 @@
 }
 
 .bji-icon {
-  align-self: center;
   height: 80px;
   width: 80px;
 }
@@ -116,8 +124,7 @@
   text-shadow: -6px 4px #f58220;
 }
 
-button:hover,
-:focus {
+button:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
@@ -324,6 +331,31 @@ button {
   cursor: pointer;
 }
 
+.menu {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu-title {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-title h1 {
+  font-size: 3rem;
+  font-family: "Roboto", sans-serif;
+  align-self: center;
+  color:rgb(53, 53, 53)
+}
+
+.menu-title img {
+  transform: scale(0.7) rotate(2deg);
+  margin-top: -20px;
+}
+
 @media only screen and (max-width: 900px) {
   .title h1 {
     font-size: 4rem;
@@ -335,6 +367,7 @@ button {
 
   #hidden {
     position: absolute;
+    z-index: 1;
     left: 0px;
     width: 100%;
     height: 30vh;
