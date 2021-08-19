@@ -3,7 +3,6 @@ const Category = require("../models/Category");
 const Test = require("../models/Test");
 
 exports.getMenu = (req, res) => {
-  console.log(Menu.find())
   Menu.find().then((item) => {
     console.log(item, "menuItem");
     if (!item) {
