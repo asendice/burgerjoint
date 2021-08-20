@@ -332,10 +332,48 @@ button {
 }
 
 .menu {
-  height: 100vh;
+  display: flex;
+}
+
+.category-menu {
+  flex: 1;
+}
+
+.category-item {
+  height: 100px;
+  border: 1px solid rgb(53, 53, 53);
+  background-color: #fef6aa;
+  opacity: 0.6;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.category-item:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.category-item img {
+  height: 100px;
+}
+
+.display-menu {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-box {
+  width: 1100px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .menu-title {
@@ -348,12 +386,51 @@ button {
   font-size: 3rem;
   font-family: "Roboto", sans-serif;
   align-self: center;
-  color:rgb(53, 53, 53)
+  color: rgb(53, 53, 53);
 }
 
 .menu-title img {
   transform: scale(0.7) rotate(2deg);
+  width: 300px;
   margin-top: -20px;
+}
+
+.menu-description {
+  font-size: 1.4rem;
+  font-family: "Source Sans Pro", sans-serif;
+  margin-top: 50px;
+}
+
+.card-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.menu-card {
+  width: 240px;
+  min-height: 308px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background-color: #fef6aa;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+}
+
+.menu-card h2 {
+  font-family: "Roboto", sans-serif;
+  color: rgb(53, 53, 53);
+}
+
+@media only screen and (max-width: 1375px) {
+  .menu-box {
+    width: 620px;
+  }
 }
 
 @media only screen and (max-width: 900px) {
