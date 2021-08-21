@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import brush from "../img/brush.png";
+import { FaAngleDown } from "react-icons/fa";
+import { FaAngleUp } from "react-icons/fa";
 
 const Menu = () => {
   const [menu, setMenu] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState({});
-
-  console.log(selectedCategory, "selectedCategory ");
+  const [showMobile, setShowMobile] = useState(false);
 
   const getMenu = async () => {
     await axios
       .get("http://localhost:8000/api/menu")
       .then((response) => {
         if (response) {
-          console.log(response);
           return response;
         } else {
           const error = new Error(
@@ -63,19 +63,19 @@ const Menu = () => {
 
   const renderMenu = () => {
     if (menu.length > 0 && selectedCategory.name === "Menu") {
-      let firstMenu = [menu[0], menu[19], menu[22]];
+      let firstMenu = [menu[0], menu[19], menu[3]];
       return firstMenu.map((item) => {
         return (
           <div className="menu-card">
             <h2>{item.name.toUpperCase()}</h2>
-            <p>{item.calories} calories</p>
+            <p className="menu-card-descrip">{item.calories} calories</p>
             <p>{item.description}</p>
             <img src={item.img} />
           </div>
         );
       });
     } else {
-      let filteredMenu = menu.filter((item) => {
+      const filteredMenu = menu.filter((item) => {
         if (
           item.category.toUpperCase() === selectedCategory.name.toUpperCase()
         ) {
@@ -86,7 +86,7 @@ const Menu = () => {
         return (
           <div className="menu-card">
             <h2>{item.name.toUpperCase()}</h2>
-            <p>{item.calories} calories</p>
+            <p className="menu-card-descrip">{item.calories} calories</p>
             <p>{item.description}</p>
             <img src={item.img} />
           </div>
@@ -107,6 +107,10 @@ const Menu = () => {
     );
   };
 
+  const onMobileMenuClick = () => {
+    setShowMobile(!showMobile);
+  };
+
   return (
     <div className="menu">
       <div className="category-menu">
@@ -114,12 +118,39 @@ const Menu = () => {
           {categories.map((cat) => {
             return (
               <div
-                style={{ opacity: selectedCategory === cat ? "1" : ".7" }}
+                style={{ opacity: selectedCategory === cat ? "1" : "" }}
                 onClick={() => setSelectedCategory(cat)}
                 className="category-item"
               >
                 <img src={cat.img} />
-                {cat.name}
+                <h4>{cat.name}</h4>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="category-menu-mobile">
+        <h5>
+          {selectedCategory.name != "Menu"
+            ? selectedCategory.name
+            : "Categories"}
+        </h5>
+        <div
+          onClick={() => onMobileMenuClick()}
+          className="category-menu-mobile-icon"
+        >
+          {showMobile ? <FaAngleUp /> : <FaAngleDown />}
+        </div>
+        <div className="menu-mobile" id={showMobile ? "mobile-menu" : ""}>
+          {categories.map((cat) => {
+            return (
+              <div
+                onClick={() => {
+                  setSelectedCategory(cat);
+                  setShowMobile(false);
+                }}
+              >
+                <h5>{cat.name}</h5>
               </div>
             );
           })}
