@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import bji from "../img/bji.png";
 
@@ -9,32 +9,68 @@ const NavBar = () => {
     setShowMenu(!showMenu);
   };
 
+  const closeMenu = () => {
+    setShowMenu(false);
+  };
+
   return (
     <>
       <div className="navbar">
         <div className="bji-icon-container">
-          <NavLink className="bji-icon-container-link" to="/">
+          <NavLink
+            onClick={() => closeMenu()}
+            className="bji-icon-container-link"
+            to="/"
+          >
             <img className="bji-icon" src={bji} />
             <p>Burger Joint</p>
           </NavLink>
         </div>
         <ul className="nav-links" id={showMenu === true ? "hidden" : ""}>
           <li>
-            <NavLink className="nav-links-link" to="/menu">
+            <NavLink
+              onClick={() => closeMenu()}
+              className="nav-links-link"
+              to="/menu"
+            >
               Menu
             </NavLink>
           </li>
           <li>
-            <NavLink className="nav-links-link" to="/">Membership</NavLink>
+            <NavLink
+              onClick={() => closeMenu()}
+              className="nav-links-link"
+              to="/"
+            >
+              Membership
+            </NavLink>
           </li>
           <li>
-            <NavLink className="nav-links-link" to="/">Locations</NavLink>
+            <NavLink
+              onClick={() => closeMenu()}
+              className="nav-links-link"
+              to="/"
+            >
+              Locations
+            </NavLink>
           </li>
           <li>
-            <NavLink className="nav-links-link" to="/">Contact Us</NavLink>
+            <NavLink
+              onClick={() => closeMenu()}
+              className="nav-links-link"
+              to="/"
+            >
+              Contact Us
+            </NavLink>
           </li>
           <li>
-            <NavLink className="nav-links-link" to="/"><button className="nav-btn">Order Now</button></NavLink>
+            <NavLink
+              onClick={() => closeMenu()}
+              className="nav-links-link"
+              to="/"
+            >
+              <button className="nav-btn">Order Now</button>
+            </NavLink>
           </li>
         </ul>
         <div className="nav-burger-container">
