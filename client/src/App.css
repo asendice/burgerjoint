@@ -458,6 +458,25 @@ button {
   color: #448faf;
 }
 
+.menu-card img {
+  margin-top: auto;
+}
+
+.menu-card-add {
+  align-self: center;
+  color: #f58220;
+  padding: 5px;
+  border: solid #f58220 1px;
+  border-radius: 10px;
+  transition: all 0.4s ease-in-out;
+}
+
+.menu-card-add:hover {
+  background-color: #f58220;
+  color: #fff;
+  cursor: pointer;
+}
+
 .menu-mobile {
   display: none;
 }
@@ -466,6 +485,12 @@ button {
   height: 50px;
   width: 100%;
   border-bottom: solid black 1px;
+  opacity: 0.7;
+}
+
+.menu-mobile div:hover {
+  cursor: pointer;
+  opacity: 1;
 }
 
 @media only screen and (max-width: 1375px) {

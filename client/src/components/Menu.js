@@ -71,6 +71,7 @@ const Menu = () => {
             <p className="menu-card-descrip">{item.calories} calories</p>
             <p>{item.description}</p>
             <img src={item.img} />
+            <div className="menu-card-add">Add to Order</div>
           </div>
         );
       });
@@ -89,6 +90,7 @@ const Menu = () => {
             <p className="menu-card-descrip">{item.calories} calories</p>
             <p>{item.description}</p>
             <img src={item.img} />
+            <div className="menu-card-add">Add to Order</div>
           </div>
         );
       });
