@@ -4,62 +4,24 @@ import brush from "../img/brush.png";
 import { FaAngleDown } from "react-icons/fa";
 import { FaAngleUp } from "react-icons/fa";
 
-const Menu = () => {
-  const [menu, setMenu] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState({});
+const Menu = ({
+  createOrder,
+  orders,
+  menu,
+  categories,
+  selectedCategory,
+  setSelectedCategory,
+}) => {
   const [showMobile, setShowMobile] = useState(false);
 
-  const getMenu = async () => {
-    await axios
-      .get("http://localhost:8000/api/menu")
-      .then((response) => {
-        if (response) {
-          return response;
-        } else {
-          const error = new Error(
-            `Error ${response.status} : ${response.statusText}`
-          );
-          error.response = response;
-          throw error;
-        }
-      })
-      .then((response) => setMenu(response.data.result));
+  const checkOrder = (order) => {
+    console.log(order.name, "name");
+    if (orders.includes(order)) {
+      return null;
+    } else {
+      createOrder(order);
+    }
   };
-
-  const getCategories = async () => {
-    await axios
-      .get("http://localhost:8000/api/category")
-      .then((response) => {
-        if (response) {
-          console.log(response);
-          return response;
-        } else {
-          const error = new Error(
-            `Error ${response.status} : ${response.statusText}`
-          );
-          error.response = response;
-          throw error;
-        }
-      })
-      .then((response) => setCategories(response.data.result));
-  };
-
-  useEffect(() => {
-    getMenu();
-    getCategories();
-    const menu = {
-      name: "Menu",
-      description: `"Every bite a better burger” is more than our motto here at
-      BurgerJoint – it’s our lifestyle. Top-quality ingredients are used
-      in all of our BurgerJoint creations, from 100% Certified Angus Beef®
-      burgers and crispy chicken sandwiches, to unique salad blends and
-      creative sides. Discover every mouthwatering option we have to offer
-      below. Already know what burger you’re craving? Skip the small talk
-      and order online.`,
-    };
-    setSelectedCategory(menu);
-  }, []);
 
   const renderMenu = () => {
     if (menu.length > 0 && selectedCategory.name === "Menu") {
@@ -70,8 +32,11 @@ const Menu = () => {
             <h2>{item.name.toUpperCase()}</h2>
             <p className="menu-card-descrip">{item.calories} calories</p>
             <p>{item.description}</p>
-            <img src={item.img} />
-            <div className="menu-card-add">Add to Order</div>
+            <img alt={item.name} src={item.img} />
+
+            <div onClick={() => checkOrder(item)} className="menu-card-add">
+              Add to Order
+            </div>
           </div>
         );
       });
@@ -89,8 +54,10 @@ const Menu = () => {
             <h2>{item.name.toUpperCase()}</h2>
             <p className="menu-card-descrip">{item.calories} calories</p>
             <p>{item.description}</p>
-            <img src={item.img} />
-            <div className="menu-card-add">Add to Order</div>
+            <img alt={item.name} src={item.img} />
+            <div onClick={() => checkOrder(item)} className="menu-card-add">
+              Add to Order
+            </div>
           </div>
         );
       });

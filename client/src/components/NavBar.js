@@ -67,7 +67,7 @@ const NavBar = () => {
             <NavLink
               onClick={() => closeMenu()}
               className="nav-links-link"
-              to="/"
+              to="/order"
             >
               <button className="nav-btn">Order Now</button>
             </NavLink>
