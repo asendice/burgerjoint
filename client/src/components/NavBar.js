@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import bji from "../img/bji.png";
 
@@ -22,7 +22,7 @@ const NavBar = () => {
             className="bji-icon-container-link"
             to="/"
           >
-            <img className="bji-icon" src={bji} />
+            <img alt="bji icon" className="bji-icon" src={bji} />
             <p>Burger Joint</p>
           </NavLink>
         </div>

@@ -13,6 +13,14 @@ const App = () => {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState({});
 
+  const checkOrder = (order) => {
+    setOrders([...orders, order]);
+  };
+
+  useEffect(() => {
+    console.log(orders, "orders");
+  }, [orders]);
+
   const getMenu = async () => {
     await axios
       .get("http://localhost:8000/api/menu")
@@ -64,12 +72,6 @@ const App = () => {
     setSelectedCategory(menu);
   }, []);
 
-  const createOrder = (order) => {
-    let arrOrders = orders;
-    arrOrders.push(order);
-    setOrders(arrOrders);
-  };
-
   return (
     <div className="app">
       <BrowserRouter>
@@ -81,7 +83,8 @@ const App = () => {
           render={() => (
             <Menu
               menu={menu}
-              createOrder={createOrder}
+              setOrders={setOrders}
+              checkOrder={checkOrder}
               orders={orders}
               categories={categories}
               selectedCategory={selectedCategory}
