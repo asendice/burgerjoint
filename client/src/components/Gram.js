@@ -86,22 +86,21 @@ const Gram = () => {
       <div className="img-container">
         {instaGramItems.map((gram) => {
           return (
-            <>
-              <div
-                className="gram-item"
-                style={{ backgroundImage: `url(${gram.img})` }}
-              >
-                <div className="gram-item-overlay">
-                  <div className="likes-comments">
-                    <FaRegHeart />
-                    <h4>{gram.likes}</h4>
-                    <FaRegComment />
-                    <h4>{gram.comments}</h4>
-                  </div>
-                  <h4 className="gram-item-comment">{gram.msg}</h4>
+            <div
+              className="gram-item"
+              style={{ backgroundImage: `url(${gram.img})` }}
+              key={gram.msg}
+            >
+              <div className="gram-item-overlay">
+                <div className="likes-comments">
+                  <FaRegHeart />
+                  <h4>{gram.likes}</h4>
+                  <FaRegComment />
+                  <h4>{gram.comments}</h4>
                 </div>
+                <h4 className="gram-item-comment">{gram.msg}</h4>
               </div>
-            </>
+            </div>
           );
         })}
       </div>

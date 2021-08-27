@@ -13,17 +13,6 @@ const Menu = ({
 }) => {
   const [showMobile, setShowMobile] = useState(false);
 
-
-  // const checkOrder = (order) => {
-  //   let arrOrders = orders;
-  //   if (orders.includes(order)) {
-  //     return null;
-  //   } else {
-  //     arrOrders.push(order);
-  //     setOrders(arrOrders);
-  //   }
-  // };
-
   const renderMenu = () => {
     if (menu.length > 0 && selectedCategory.name === "Menu") {
       let firstMenu = [menu[0], menu[19], menu[3]];
@@ -40,7 +29,7 @@ const Menu = ({
                 Add to Order
               </div>
             ) : (
-              "Added to order :)"
+              <div className="menu-card-added">Added to Order</div>
             )}
           </div>
         );
@@ -65,7 +54,7 @@ const Menu = ({
                 Add to Order
               </div>
             ) : (
-              "Added to order :)"
+              <div className="menu-card-added">Added to Order</div>
             )}
           </div>
         );

@@ -183,7 +183,7 @@ button:hover {
 }
 
 .card img {
-  width: 185px;
+  width: 250px;
   align-self: flex-end;
 }
 
@@ -475,6 +475,14 @@ button {
   background-color: #f58220;
   color: #fff;
   cursor: pointer;
+}
+
+.menu-card-added {
+  align-self: center;
+  color: #448faf;
+  padding: 5px;
+  border: solid #448faf 1px;
+  border-radius: 10px;
 }
 
 .menu-mobile {
