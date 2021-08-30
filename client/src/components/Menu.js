@@ -87,7 +87,11 @@ const Menu = ({
           {categories.map((cat) => {
             return (
               <div
-                style={{ opacity: selectedCategory === cat ? "1" : "" }}
+                style={{
+                  opacity: selectedCategory === cat ? "1" : "",
+                  backgroundColor: selectedCategory === cat ? "#448faf" : "",
+                  color: selectedCategory === cat ? "#fff" : "",
+                }}
                 onClick={() => setSelectedCategory(cat)}
                 className="category-item"
                 key={cat.name}
@@ -99,16 +103,13 @@ const Menu = ({
           })}
         </div>
       </div>
-      <div className="category-menu-mobile">
+      <div className="category-menu-mobile" onClick={() => onMobileMenuClick()}>
         <h5>
           {selectedCategory.name !== "Menu"
             ? selectedCategory.name
             : "Categories"}
         </h5>
-        <div
-          onClick={() => onMobileMenuClick()}
-          className="category-menu-mobile-icon"
-        >
+        <div className="category-menu-mobile-icon">
           {showMobile ? <FaAngleUp /> : <FaAngleDown />}
         </div>
         <div className="menu-mobile" id={showMobile ? "mobile-menu" : ""}>
