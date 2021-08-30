@@ -512,6 +512,7 @@ button {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
+  margin-top: 25px;
 }
 
 .order-item {
@@ -520,6 +521,7 @@ button {
   justify-content: space-around;
   width: 900px;
   background-color: #fcfaed;
+  border:rgb(53, 53, 53) solid 1px;
   border-radius: 10px;
   margin-bottom: 10px;
 }

@@ -9,7 +9,6 @@ const Order = ({ orders, updateOrderQty }) => {
       </div>
       <div className="order-container">
         {orders.map((order) => {
-          order.qty = 1;
           return (
             <div key={order.name}>
               <OrderItem order={order} orders={orders} updateOrderQty={updateOrderQty} />

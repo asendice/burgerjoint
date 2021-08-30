@@ -3,8 +3,7 @@ import { FaPlusCircle } from "react-icons/fa";
 import { FaMinusCircle } from "react-icons/fa";
 
 const OrderItem = ({ order, orders, updateOrderQty }) => {
-  const [quantity, setQuantity] = useState(1);
-  console.log(quantity, "quantity");
+  const [quantity, setQuantity] = useState(order.qty > 1 ? order.qty : 1);
 
   useEffect(() => {
     updateOrderQty(quantity, order.name);
@@ -32,7 +31,7 @@ const OrderItem = ({ order, orders, updateOrderQty }) => {
         />
       </div>
       <div className="order-total">
-        <h2>{12.99 * quantity}</h2>
+        <h2>${12.99 * quantity}</h2>
       </div>
     </div>
   );

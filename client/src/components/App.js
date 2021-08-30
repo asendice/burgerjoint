@@ -22,15 +22,10 @@ const App = () => {
   }, [orders]);
 
   const updateOrderQty = (qty, name) => {
-    console.log(name, qty, "name, qty");
-
-    orders
-      .find((order) => order.name === name)
-      .then((order) => {
-        console.log(order, "order");
-        order.qty = qty;
-      });
-    setOrders(orders);
+    const updateOrders = [...orders];
+    const index = orders.findIndex((order) => order.name === name);
+    updateOrders[index].qty = qty;
+    setOrders(updateOrders);
   };
 
   const getMenu = async () => {
