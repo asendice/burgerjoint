@@ -21,6 +21,18 @@ const App = () => {
     console.log(orders, "orders");
   }, [orders]);
 
+  const updateOrderQty = (qty, name) => {
+    console.log(name, qty, "name, qty");
+
+    orders
+      .find((order) => order.name === name)
+      .then((order) => {
+        console.log(order, "order");
+        order.qty = qty;
+      });
+    setOrders(orders);
+  };
+
   const getMenu = async () => {
     await axios
       .get("http://localhost:8000/api/menu")
@@ -92,7 +104,13 @@ const App = () => {
             />
           )}
         />
-        <Route exact path="/order" render={() => <Order orders={orders} />} />
+        <Route
+          exact
+          path="/order"
+          render={() => (
+            <Order orders={orders} updateOrderQty={updateOrderQty} />
+          )}
+        />
         <Footer />
       </BrowserRouter>
     </div>

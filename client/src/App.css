@@ -464,16 +464,15 @@ button {
 
 .menu-card-add {
   align-self: center;
-  color: #f58220;
+  background-color: #f58220;
+  color: #fff;
   padding: 5px;
   border: solid #f58220 1px;
   border-radius: 10px;
   transition: all 0.4s ease-in-out;
 }
 
-.menu-card-add:hover {
-  background-color: #f58220;
-  color: #fff;
+.menu-card-add:hover {  
   cursor: pointer;
 }
 
@@ -520,7 +519,9 @@ button {
   align-items: center;
   justify-content: space-around;
   width: 900px;
-  border: black solid 1px;
+  background-color: #fcfaed;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .order-name {

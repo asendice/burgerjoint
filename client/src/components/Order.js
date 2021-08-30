@@ -1,8 +1,7 @@
 import React from "react";
-import { FaPlusCircle } from "react-icons/fa";
-import { FaMinusCircle } from "react-icons/fa";
+import OrderItem from "./OrderItem";
 
-const Order = ({ orders }) => {
+const Order = ({ orders, updateOrderQty }) => {
   return (
     <div className="order-page">
       <div className="menu-title">
@@ -10,21 +9,10 @@ const Order = ({ orders }) => {
       </div>
       <div className="order-container">
         {orders.map((order) => {
-          let quantity = order.qty;
+          order.qty = 1;
           return (
-            <div key={order._id} className="order-item">
-              <div className="order-name">
-                <img alt={order.name} src={order.img} />
-                <h2>{order.name}</h2>
-              </div>
-              <div className="order-qty">
-                <FaMinusCircle onClick={() => (quantity = quantity - 1)} />
-                <h1>{quantity}</h1>
-                <FaPlusCircle onClick={() => quantity + 1} />
-              </div>
-              <div className="order-total">
-                <h2>12.99</h2>
-              </div>
+            <div key={order.name}>
+              <OrderItem order={order} orders={orders} updateOrderQty={updateOrderQty} />
             </div>
           );
         })}
