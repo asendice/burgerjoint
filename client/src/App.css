@@ -335,6 +335,7 @@ button {
 .menu {
   display: flex;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .category-menu {
@@ -345,7 +346,7 @@ button {
   display: none;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  /* width: 100%; */
   height: 70px;
   background-color: #fcfaed;
   border-bottom: solid black 1px;
@@ -415,6 +416,7 @@ button {
   margin-top: 25px;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .menu-title h1 {
@@ -431,9 +433,12 @@ button {
 }
 
 .menu-description {
+  display: flex;
+  flex-wrap: wrap;
   font-size: 1.4rem;
   font-family: "Source Sans Pro", sans-serif;
   margin-top: 50px;
+  line-height: 2rem;
 }
 
 .card-group {
@@ -515,23 +520,43 @@ button {
   align-items: center;
 }
 
-.order-container {
+.orders-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  margin-top: 25px;
+  margin: 40px 0px 70px 0px;
+}
+
+.order-section {
+  margin: 30px 0px 30px 0px;
 }
 
 .order-item {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 900px;
+  flex-direction: column;
+  border: rgb(53, 53, 53, 0.5) solid 1px;
   background-color: #fcfaed;
-  border: rgb(53, 53, 53) solid 1px;
   border-radius: 10px;
   margin-bottom: 10px;
+  width: 900px;
+  padding: 10px;
+}
+
+.remove-order {
+  display: flex;
+  justify-content: flex-start;
+  color: #448faf;
+  font-size: 1.5rem;
+}
+
+.remove-order:hover {
+  cursor: pointer;
+}
+
+.order-content {
+  display: flex;
+  justify-content: space-around;
 }
 
 .order-name {
@@ -542,7 +567,7 @@ button {
 }
 
 .order-name img {
-  height: 150px;
+  height: 120px;
 }
 
 .order-name h2 {
@@ -553,8 +578,14 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  width: 100px;
 }
 
+.order-title {
+  font-family: "Roboto", sans-serif;
+  text-decoration: underline;
+  margin-bottom: 25px;
+}
 @media only screen and (max-width: 1375px) {
   .menu-box {
     width: 720px;
@@ -662,7 +693,7 @@ button {
   .card {
     padding: 24px;
     height: 205px;
-    width: 290px;
+    width: 250px;
   }
 
   .featured-title {
@@ -674,11 +705,16 @@ button {
     width: 300px;
   }
 
-  .menu-box {
+  .menu-title h1 {
+    font-size: 1.9rem;
+  }
+
+  .menu-description {
+    font-size: 1.1rem;
     width: 300px;
   }
 
   .order-item {
-    width: 300px;
+    width: 400px;
   }
 }

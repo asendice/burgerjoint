@@ -28,6 +28,13 @@ const App = () => {
     setOrders(updateOrders);
   };
 
+  const removeOrder = (id, name) => {
+    setOrders(orders.filter((order) => {
+      return order.name !== name;
+    }))
+
+  }
+
   const getMenu = async () => {
     await axios
       .get("http://localhost:8000/api/menu")
@@ -103,7 +110,7 @@ const App = () => {
           exact
           path="/order"
           render={() => (
-            <Order orders={orders} updateOrderQty={updateOrderQty} />
+            <Order orders={orders} updateOrderQty={updateOrderQty} removeOrder={removeOrder}/>
           )}
         />
         <Footer />
