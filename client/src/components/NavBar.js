@@ -40,7 +40,7 @@ const NavBar = () => {
             <NavLink
               onClick={() => closeMenu()}
               className="nav-links-link"
-              to="/"
+              to="/membership"
             >
               Membership
             </NavLink>

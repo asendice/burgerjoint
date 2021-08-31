@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import Home from "../components/Home";
 import Menu from "../components/Menu";
 import Order from "../components/Order";
+import Membership from "../components/Membership";
 
 const App = () => {
   const [orders, setOrders] = useState([]);
@@ -113,6 +114,7 @@ const App = () => {
             <Order orders={orders} updateOrderQty={updateOrderQty} removeOrder={removeOrder}/>
           )}
         />
+        <Route exact path="/membership" component={Membership} />
         <Footer />
       </BrowserRouter>
     </div>
