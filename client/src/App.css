@@ -586,6 +586,99 @@ button {
   text-decoration: underline;
   margin-bottom: 25px;
 }
+
+.membership-top {
+  height: 85vh;
+  background-color: rgb(53, 53, 53);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.membership-top h1 {
+  color: #fff;
+  font-family: "Ultra", serif;
+  text-shadow: -4px 3px #f58220;
+  margin-top: 60px;
+  font-size: 3rem;
+}
+.membership-top p {
+  margin-top: 25px;
+  width: 550px;
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+.join-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 25px;
+  height: 50px;
+  width: 500px;
+  border: #f58220 solid 1px;
+  border-radius: 30px;
+  background-color: #f58220;
+  color: #fff;
+}
+.sign-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 15px;
+  height: 50px;
+  width: 500px;
+  border: #f58220 solid 1px;
+  border-radius: 30px;
+  color: #f58220;
+  transition: all 0.2s ease-in-out;
+}
+
+.join-btn:hover {
+  cursor: pointer;
+  opacity: 1.5;
+  border: #d8690a solid 1px;
+  background-color: #d8690a;
+}
+
+.sign-btn:hover {
+  color: #fff;
+  background-color: #f58220;
+  cursor: pointer;
+}
+
+.membership-bot {
+  height: 80vh;
+  background-color: #f58220;
+}
+
+/* css from shapediver.app for curve */
+.curve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.curve svg {
+  position: relative;
+  display: block;
+  width: calc(185% + 1.3px);
+  height: 275px;
+}
+
+.curve .shape-fill {
+  fill: #f58220;
+}
+
 @media only screen and (max-width: 1375px) {
   .menu-box {
     width: 720px;
