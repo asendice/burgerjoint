@@ -1,6 +1,51 @@
 import React from "react";
+import { FaBirthdayCake } from "react-icons/fa";
+import { GiGlassCelebration } from "react-icons/gi";
+import { GiTakeMyMoney } from "react-icons/gi";
+import { GiRank3 } from "react-icons/gi";
+import { GiShinyApple } from "react-icons/gi";
+import { GiTrophiesShelf } from "react-icons/gi";
 
 const Membership = () => {
+  const rewards = [
+    {
+      title: "FREE BIRTHDAY BURGER",
+      img: <FaBirthdayCake className="reward-img" />,
+      description:
+        "Choose from any of your favorite fire-grilled burgers (valid once during the month of your birthday)",
+    },
+    {
+      title: "EVERY 10TH ITEM FREE",
+      img: <GiGlassCelebration className="reward-img" />,
+      description:
+        "Mix and match burgers, salads, sandwiches and entrees (catering orders do not apply toward credit).",
+    },
+    {
+      title: "$20 TOWARD 6TH VISIT",
+      img: <GiTakeMyMoney className="reward-img" />,
+      description:
+        "When you visit 5x in the first 5 weeks. (Each purchase must include a burger, entree, full-sized salad or sandwich)",
+    },
+    {
+      title: "MILITARY REWARDS",
+      img: <GiRank3 className="reward-img" />,
+      description:
+        "Our chance to serve those who have served us proudly (US Only).",
+    },
+    {
+      title: "TEACHER REWARDS",
+      img: <GiShinyApple className="reward-img" />,
+      description:
+        "Enjoy surprises throughout the year as a small thanks for your bottomless dedication.",
+    },
+    {
+      title: "SURPRISE REWARDS",
+      img: <GiTrophiesShelf className="reward-img" />,
+      description:
+        "You and your taste buds will be delighted throughout the year with special offers and great deals.",
+    },
+  ];
+
   return (
     <>
       <div className="membership-top">
@@ -26,7 +71,21 @@ const Membership = () => {
           ></path>
         </svg>
       </div>
-      <div className="membership-bot"></div>
+      <div className="membership-bot">
+        <h1>BECOME A CLUB MEMBER & ENJOY THESE REWARDS</h1>
+        <div className="reward-grp">
+          {rewards.map((item) => {
+            return (
+              <div className="reward">
+                {item.img}
+                <h2>{item.title}</h2>
+                <p>{item.description}</p>
+              </div>
+            );
+          })}
+        </div>
+        <div className="sign-btn btn-org">Join Now</div>
+      </div>
     </>
   );
 };

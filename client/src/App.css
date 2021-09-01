@@ -283,13 +283,26 @@ button {
   background-color: rgb(53, 53, 53);
   justify-content: space-around;
   align-items: center;
-  padding: 25px;
+  padding: 70px;
 }
 
 .footer-links {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  flex: 3;
+}
+
+.footer-copyright {
+  max-width: 500px;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.footer-section-right {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -313,7 +326,7 @@ button {
 .footer-icons {
   display: flex;
   justify-content: space-evenly;
-  width: 25%;
+  /* width: 25%; */
 }
 
 .footer-icons span {
@@ -324,6 +337,8 @@ button {
   border-radius: 100%;
   padding: 12px;
   transition: all 0.4s ease;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .footer-icons span:hover {
@@ -600,7 +615,7 @@ button {
   font-family: "Ultra", serif;
   text-shadow: -4px 3px #f58220;
   margin-top: 60px;
-  font-size: 3rem;
+  font-size: 4rem;
 }
 .membership-top p {
   margin-top: 25px;
@@ -639,6 +654,12 @@ button {
   transition: all 0.2s ease-in-out;
 }
 
+.btn-org {
+  color: #fff;
+  border: rgb(53, 53, 53) solid 1px;
+  background: #448faf;
+}
+
 .join-btn:hover {
   cursor: pointer;
   opacity: 1.5;
@@ -653,11 +674,21 @@ button {
 }
 
 .membership-bot {
-  height: 80vh;
   background-color: #f58220;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
 }
 
-/* css from shapediver.app for curve */
+.membership-bot h1 {
+  margin-top: 40px;
+  color: rgb(53, 53, 53);
+  font-family: "Roboto", sans-serif;
+  font-size: 2.2rem;
+}
+
+/* css from shapediver.app for curve 1*/
 .curve {
   position: absolute;
   bottom: 0;
@@ -677,6 +708,67 @@ button {
 
 .curve .shape-fill {
   fill: #f58220;
+}
+/* end */
+
+/* Curve 2 */
+
+.curve-two {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.curve-two svg {
+  position: relative;
+  display: block;
+  width: calc(161% + 1.3px);
+  height: 99px;
+}
+
+.curve-two.shape-fill {
+  fill: #353535;
+}
+
+.reward-grp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.reward {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  padding: 20px;
+  background-color: rgb(53, 53, 53);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 10px;
+}
+
+.reward h2 {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+.reward p {
+  color: #fff;
+}
+
+.reward-img {
+  font-size: 6rem;
+  color: #448faf;
 }
 
 @media only screen and (max-width: 1375px) {
@@ -765,6 +857,13 @@ button {
 
   .order-item {
     width: 700px;
+  }
+
+  .sign-btn {
+    width: 300px;
+  }
+  .join-btn {
+    width: 300px;
   }
 }
 
