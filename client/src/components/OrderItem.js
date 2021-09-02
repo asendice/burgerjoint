@@ -11,13 +11,12 @@ const OrderItem = ({ order, removeOrder, updateOrderQty }) => {
   }, [quantity]);
 
   const onRemoveItemClick = () => {
-    console.log(order, "order");
     removeOrder(order._id, order.name);
   };
 
   return (
     <div key={order._id} className="order-item">
-      <div className="remove-order" >
+      <div className="remove-order">
         <FaWindowClose onClick={() => onRemoveItemClick()} />
       </div>
       <div className="order-content">

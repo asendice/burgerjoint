@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import bji from "../img/bji.png";
 
-const NavBar = () => {
+const NavBar = ({ url }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleNavMenu = () => {
@@ -29,6 +29,7 @@ const NavBar = () => {
         <ul className="nav-links" id={showMenu === true ? "hidden" : ""}>
           <li>
             <NavLink
+              activeClassName="nav-link-active"
               onClick={() => closeMenu()}
               className="nav-links-link"
               to="/menu"
@@ -38,6 +39,7 @@ const NavBar = () => {
           </li>
           <li>
             <NavLink
+              activeClassName="nav-link-active"
               onClick={() => closeMenu()}
               className="nav-links-link"
               to="/membership"
@@ -47,18 +49,20 @@ const NavBar = () => {
           </li>
           <li>
             <NavLink
+              activeClassName="nav-link-active"
               onClick={() => closeMenu()}
               className="nav-links-link"
-              to="/"
+              to="/locations"
             >
               Locations
             </NavLink>
           </li>
           <li>
             <NavLink
+              activeClassName="nav-link-active"
               onClick={() => closeMenu()}
               className="nav-links-link"
-              to="/"
+              to="/contact"
             >
               Contact Us
             </NavLink>

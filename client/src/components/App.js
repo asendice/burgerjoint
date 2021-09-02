@@ -14,6 +14,14 @@ const App = () => {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState({});
 
+  // const [url, setUrl] = useState("");
+
+  
+
+  // useEffect(() => {
+  //   setUrl(window.document.URL.slice(22));
+  // }, [window.document.URL]);
+
   const checkOrder = (order) => {
     setOrders([...orders, order]);
   };
@@ -30,11 +38,12 @@ const App = () => {
   };
 
   const removeOrder = (id, name) => {
-    setOrders(orders.filter((order) => {
-      return order.name !== name;
-    }))
-
-  }
+    setOrders(
+      orders.filter((order) => {
+        return order.name !== name;
+      })
+    );
+  };
 
   const getMenu = async () => {
     await axios
@@ -111,7 +120,11 @@ const App = () => {
           exact
           path="/order"
           render={() => (
-            <Order orders={orders} updateOrderQty={updateOrderQty} removeOrder={removeOrder}/>
+            <Order
+              orders={orders}
+              updateOrderQty={updateOrderQty}
+              removeOrder={removeOrder}
+            />
           )}
         />
         <Route exact path="/membership" component={Membership} />

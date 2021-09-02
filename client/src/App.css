@@ -23,16 +23,20 @@
 }
 
 .nav-links-link {
-  transition: all 0.4s ease;
   font-size: 1.3rem;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
   color: #fff;
+  transition: all 0.2s ease-in-out;
 }
 
 .nav-links a:hover {
-  color: #f58220;
+  color: #448faf;
   cursor: pointer;
+}
+
+.nav-link-active {
+  color: #448faf;
 }
 
 .nav-btn {
@@ -656,7 +660,7 @@ button {
 
 .btn-org {
   color: #fff;
-  border: rgb(53, 53, 53) solid 1px;
+  border: #448faf solid 1px;
   background: #448faf;
 }
 
