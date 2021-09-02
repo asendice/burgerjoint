@@ -299,9 +299,11 @@ button {
 }
 
 .footer-copyright {
+  text-align: center;
   max-width: 500px;
   color: #fff;
   margin-top: 10px;
+  font-size: 12px;
 }
 
 .footer-section-right {
@@ -330,7 +332,6 @@ button {
 .footer-icons {
   display: flex;
   justify-content: space-evenly;
-  /* width: 25%; */
 }
 
 .footer-icons span {
@@ -622,6 +623,7 @@ button {
   font-size: 4rem;
 }
 .membership-top p {
+  text-align: center;
   margin-top: 25px;
   width: 550px;
   color: #fff;
@@ -742,7 +744,6 @@ button {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 50px;
 }
 
 .reward {
@@ -751,8 +752,9 @@ button {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 400px;
-  height: 200px;
+  width: 80%;
+  max-width: 400px;
+  min-height: 200px;
   margin: 10px;
   padding: 20px;
   background-color: rgb(53, 53, 53);
@@ -869,6 +871,10 @@ button {
   .join-btn {
     width: 300px;
   }
+
+  .membership-top h1 {
+    font-size: 3rem;
+  }
 }
 
 @media only screen and (max-width: 680px) {
@@ -878,6 +884,23 @@ button {
 
   .order-item {
     width: 500px;
+  }
+
+  .membership-top h1 {
+    font-size: 2.2rem;
+  }
+
+  .membership-top p {
+    font-size: 1.1rem;
+    width: 400px;
+  }
+
+  .footer-copyright {
+    width: 280px;
+  }
+
+  .bji-icon-container p {
+    font-size: 1rem;
   }
 }
 
@@ -912,5 +935,18 @@ button {
 
   .order-item {
     width: 400px;
+  }
+
+  .membership-top h1 {
+    font-size: 1.9rem;
+  }
+
+  .membership-top p {
+    font-size: 12px;
+    width: 300px;
+  }
+
+  .footer {
+    padding: 0px;
   }
 }
