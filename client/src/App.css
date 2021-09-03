@@ -259,6 +259,53 @@ button {
   margin: 15px;
 }
 
+.marker {
+  /* Set the marker size here */
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 2rem;
+  /* Set the marker color here */
+  background: #f58220;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  display: inline-block;
+  border-bottom-right-radius: 0;
+  transform: rotate(45deg);
+
+  /* optional fanciness */
+  border: 1px solid #f58220;
+}
+/* inner circle (optional if you don't need the central dot) */
+.marker::before {
+  content: "";
+  background: white;
+  width: 50%;
+  height: 50%;
+  border-radius: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  /* optional fanciness */
+  border: 1px solid #f58220;
+  box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem rgba(0, 0, 0, 0.1);
+}
+/* shadow (optional if you don't need a shadow) */
+.marker::after {
+  content: "";
+  background: rgba(128, 128, 128, 0.2);
+  width: 75%;
+  height: 75%;
+  border-radius: 100%;
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translate(-50%, -50%) rotate(45deg) scaleX(0.5);
+}
+
 .location-map {
   height: 400px;
   width: 500px;
@@ -437,6 +484,7 @@ button {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .menu-title h1 {
@@ -459,6 +507,7 @@ button {
   font-family: "Source Sans Pro", sans-serif;
   margin-top: 50px;
   line-height: 2rem;
+  text-align: center;
 }
 
 .card-group {
@@ -544,23 +593,16 @@ button {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: center;
+  min-width: 80%;
+  min-height: 50vh;
   margin: 40px 0px 70px 0px;
-}
-
-.order-section {
-  margin: 30px 0px 30px 0px;
 }
 
 .order-item {
   display: flex;
   flex-direction: column;
-  border: rgb(53, 53, 53, 0.5) solid 1px;
-  background-color: #fcfaed;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  width: 900px;
   padding: 10px;
+  border-bottom: rgb(53, 53, 53, 0.5) solid 1px;
 }
 
 .remove-order {
@@ -581,17 +623,17 @@ button {
 
 .order-name {
   display: flex;
-  padding: 20px;
   width: 400px;
   align-items: center;
 }
 
 .order-name img {
-  height: 120px;
+  height: 80px;
 }
 
 .order-name h2 {
   font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
 }
 
 .order-qty {
@@ -599,6 +641,14 @@ button {
   align-items: center;
   justify-content: space-evenly;
   width: 100px;
+}
+
+.qty-container {
+  background-color: #448faf;
+  display: flex;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
 }
 
 .order-title {
@@ -622,11 +672,13 @@ button {
   margin-top: 60px;
   font-size: 4rem;
 }
+
 .membership-top p {
   text-align: center;
   margin-top: 25px;
   width: 550px;
   color: #fff;
+  font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
   line-height: 2rem;
 }
@@ -770,6 +822,7 @@ button {
 
 .reward p {
   color: #fff;
+  text-align: center;
 }
 
 .reward-img {
@@ -861,10 +914,6 @@ button {
     display: flex;
   }
 
-  .order-item {
-    width: 700px;
-  }
-
   .sign-btn {
     width: 300px;
   }
@@ -882,10 +931,6 @@ button {
     width: 400px;
   }
 
-  .order-item {
-    width: 500px;
-  }
-
   .membership-top h1 {
     font-size: 2.2rem;
   }
@@ -901,6 +946,10 @@ button {
 
   .bji-icon-container p {
     font-size: 1rem;
+  }
+
+  .order-name {
+    width: 300px;
   }
 }
 
@@ -933,9 +982,6 @@ button {
     width: 300px;
   }
 
-  .order-item {
-    width: 400px;
-  }
 
   .membership-top h1 {
     font-size: 1.9rem;
@@ -948,5 +994,13 @@ button {
 
   .footer {
     padding: 0px;
+  }
+
+  .order-name {
+    width: 180px;
+  }
+
+  .order-name h2{
+    font-size: 14px;
   }
 }

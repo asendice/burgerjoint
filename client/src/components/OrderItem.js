@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { FaPlusCircle } from "react-icons/fa";
-import { FaMinusCircle } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
+import { FaMinus } from "react-icons/fa";
 import { FaWindowClose } from "react-icons/fa";
 
 const OrderItem = ({ order, removeOrder, updateOrderQty }) => {
@@ -16,23 +16,28 @@ const OrderItem = ({ order, removeOrder, updateOrderQty }) => {
 
   return (
     <div key={order._id} className="order-item">
-      <div className="remove-order">
-        <FaWindowClose onClick={() => onRemoveItemClick()} />
-      </div>
+      <FaWindowClose
+        className="remove-order"
+        onClick={() => onRemoveItemClick()}
+      />
       <div className="order-content">
         <div className="order-name">
           <img alt={order.name} src={order.img} />
           <h2>{order.name.toUpperCase()}</h2>
         </div>
         <div className="order-qty">
-          <FaMinusCircle
+          <FaMinus
+            className="qty-container"
             onClick={() => {
               let qty = quantity - 1;
               setQuantity(qty);
             }}
           />
+
           <h2>{quantity}</h2>
-          <FaPlusCircle
+
+          <FaPlus
+            className="qty-container"
             onClick={() => {
               let qty = quantity + 1;
               setQuantity(qty);

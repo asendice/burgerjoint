@@ -4,11 +4,17 @@ import GoogleMapReact from "google-map-react";
 const Location = () => {
   const defaultProps = {
     center: {
-      lng: -73.935242,
-      lat: 40.73061,
+      lat: 39.24119,
+      lng: -120.03275,
     },
-    zoom: 5,
+    zoom: 14,
   };
+
+  const Marker = (props) => {
+    return (
+      <div className="marker"></div>
+    )
+  }
 
   return (
     <div className="landing-section">
@@ -18,11 +24,15 @@ const Location = () => {
           <GoogleMapReact
             bootstrapURLKeys={{
               key: "AIzaSyDXhAPKlZAgvV88qB10EHW8Di3jRhUOCDg",
+              v: '3.31',
               language: "en",
             }}
             defaultCenter={defaultProps.center}
             defaultZoom={defaultProps.zoom}
-          ></GoogleMapReact>
+            resetBoundsOnResize={true}
+          >
+            <Marker lat={defaultProps.center.lat} lng={defaultProps.center.lng}/>
+          </GoogleMapReact>
         </div>
         <div className="location-card">
           <h1>Burger Joint Tahoe</h1>
