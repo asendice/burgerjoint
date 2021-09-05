@@ -482,6 +482,7 @@ button {
 .menu-title {
   margin-top: 25px;
   display: flex;
+  width: 100%;
   flex-direction: column;
   flex-wrap: wrap;
   text-align: center;
@@ -492,6 +493,22 @@ button {
   font-family: "Roboto", sans-serif;
   align-self: center;
   color: rgb(53, 53, 53);
+}
+
+.back-btn {
+  align-self: flex-start;
+  margin-left: 5%;
+}
+
+.back-btn a {
+  text-decoration: none;
+  color: rgb(53, 53, 53);
+  font-size: 2rem;
+  transition: all .4s ease-in-out;
+}
+
+.back-btn a:hover {
+  transform: scale(1.1);
 }
 
 .menu-title img {
@@ -605,6 +622,10 @@ button {
   border-bottom: rgb(53, 53, 53, 0.5) solid 1px;
 }
 
+.no-order {
+  align-self: center;
+}
+
 .remove-order {
   display: flex;
   justify-content: flex-start;
@@ -655,6 +676,20 @@ button {
   font-family: "Roboto", sans-serif;
   text-decoration: underline;
   margin-bottom: 25px;
+}
+
+.place-order {
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  padding: 5px;
+  margin-bottom: 50px;
+  width: 300px;
+  background-color: #f58220;
+  color: #fff;
+  border: #f58220 solid 1px;
+  border-radius: 10px;
 }
 
 .membership-top {
@@ -982,7 +1017,6 @@ button {
     width: 300px;
   }
 
-
   .membership-top h1 {
     font-size: 1.9rem;
   }
@@ -1000,7 +1034,7 @@ button {
     width: 180px;
   }
 
-  .order-name h2{
+  .order-name h2 {
     font-size: 14px;
   }
 }

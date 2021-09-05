@@ -5,6 +5,7 @@ import { FaWindowClose } from "react-icons/fa";
 
 const OrderItem = ({ order, removeOrder, updateOrderQty }) => {
   const [quantity, setQuantity] = useState(order.qty > 1 ? order.qty : 1);
+  
 
   useEffect(() => {
     updateOrderQty(quantity, order.name);

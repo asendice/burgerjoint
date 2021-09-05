@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 import OrderItem from "./OrderItem";
 
 const Order = ({ orders, updateOrderQty, removeOrder }) => {
+  const [total, setTotal] = useState(0);
+
   const renderOrders = () => {
     if (orders.length > 0) {
       return orders.map((order) => {
@@ -15,18 +18,27 @@ const Order = ({ orders, updateOrderQty, removeOrder }) => {
         );
       });
     } else {
-      return <div> You have 0 orders. Visit our <NavLink to="/menu">menu</NavLink> to add orders.</div>;
+      return (
+        <div className="no-order">
+          {" "}
+          You have 0 orders. Visit our <NavLink to="/menu">menu</NavLink> to add
+          orders.
+        </div>
+      );
     }
   };
   return (
     <div className="order-page">
       <div className="menu-title">
+        <div >
+          <NavLink to="/menu">
+            <FaArrowLeft />
+          </NavLink>
+        </div>
         <h1>Your Order</h1>
       </div>
       <div className="orders-container">{renderOrders()}</div>
-      <div className="total">
-        <h1>Total</h1>
-      </div>
+      <div className="place-order">Place Order</div>
     </div>
   );
 };
