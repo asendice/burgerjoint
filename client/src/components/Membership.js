@@ -76,7 +76,7 @@ const Membership = () => {
         <div className="reward-grp">
           {rewards.map((item) => {
             return (
-              <div className="reward">
+              <div key={item.name} className="reward">
                 {item.img}
                 <h2>{item.title}</h2>
                 <p>{item.description}</p>

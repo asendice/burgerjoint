@@ -1,27 +1,32 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import OrderItem from "./OrderItem";
 
-const Order = ({ orders, updateOrderQty, removeOrder }) => {
-  const [total, setTotal] = useState(0);
+const Order = ({ orders, updateOrderQty, removeOrder, total }) => {
+
+
+
+  
 
   const renderOrders = () => {
     if (orders.length > 0) {
       return orders.map((order) => {
         return (
-          <OrderItem
-            order={order}
-            updateOrderQty={updateOrderQty}
-            removeOrder={removeOrder}
-          />
+          <div key={order.name}>
+            <OrderItem
+              order={order}
+              updateOrderQty={updateOrderQty}
+              removeOrder={removeOrder}
+            />
+          </div>
         );
       });
     } else {
       return (
         <div className="no-order">
           {" "}
-          You have 0 orders. Visit our <NavLink to="/menu">menu</NavLink> to add
+          You have 0 orders. Visit our <Link to="/menu">menu</Link> to add
           orders.
         </div>
       );
@@ -30,15 +35,19 @@ const Order = ({ orders, updateOrderQty, removeOrder }) => {
   return (
     <div className="order-page">
       <div className="menu-title">
-        <div >
-          <NavLink to="/menu">
+        <div className="back-btn">
+          <Link to="/menu">
             <FaArrowLeft />
-          </NavLink>
+            <span id="back-menu">Back to Menu</span>
+          </Link>
         </div>
         <h1>Your Order</h1>
       </div>
       <div className="orders-container">{renderOrders()}</div>
-      <div className="place-order">Place Order</div>
+      <div className="place-order">
+        Place Order 
+        {total > 0 ? `$${total}` : ""}
+      </div>
     </div>
   );
 };

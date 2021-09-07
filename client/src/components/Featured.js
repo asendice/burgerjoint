@@ -22,7 +22,7 @@ const Featured = () => {
           className="card"
           style={{ backgroundColor: "#F58220" }}
         >
-          <h2>Most Amazing Cobb Salad</h2>
+          <h2>Cobb Salad</h2>
           <img
             alt="cobb salad"
             src="https://burgerjoint.s3.us-west-1.amazonaws.com/Grilled-Chicken_Cobb-Salad_Web.png"

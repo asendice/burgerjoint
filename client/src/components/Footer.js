@@ -9,30 +9,30 @@ const Footer = () => {
     <div className="footer">
       <ul className="footer-links">
         <li>
-          <a>Locations</a>
+          <a href="#">Locations</a>
         </li>
         <li>
-          <a>Contact Us</a>
+          <a href="#">Contact Us</a>
         </li>
         <li>
-          <a>About</a>
+          <a href="#">About</a>
         </li>
         <li>
-          <a>Membership</a>
+          <a href="#">Membership</a>
         </li>
       </ul>
       <ul className="footer-links">
         <li>
-          <a>Privacy Policy</a>
+          <a href="#">Privacy Policy</a>
         </li>
         <li>
-          <a>Accessibility</a>
+          <a href="#">Accessibility</a>
         </li>
         <li>
-          <a>Terms & Conditions</a>
+          <a href="#">Terms & Conditions</a>
         </li>
         <li>
-          <a>Supply Chain</a>
+          <a href="#">Supply Chain</a>
         </li>
       </ul>
       <div className="footer-section-right">

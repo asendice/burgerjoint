@@ -7,20 +7,27 @@ import Home from "../components/Home";
 import Menu from "../components/Menu";
 import Order from "../components/Order";
 import Membership from "../components/Membership";
+import { roundTotal } from "../utils/Helper";
 
 const App = () => {
   const [orders, setOrders] = useState([]);
   const [menu, setMenu] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState({});
+  const [total, setTotal] = useState(0);
 
-  // const [url, setUrl] = useState("");
+  useEffect(() => {
+    updateTotal();
+  }, [orders]);
 
-  
-
-  // useEffect(() => {
-  //   setUrl(window.document.URL.slice(22));
-  // }, [window.document.URL]);
+  const updateTotal = () => {
+    let num = 0;
+    for (let i = 0; i < orders.length; i++) {
+      console.log(orders[i]);
+      num = num + Number(orders[i].price) * orders[i].qty;
+    }
+    setTotal(roundTotal(num));
+  };
 
   const checkOrder = (order) => {
     setOrders([...orders, order]);
@@ -38,6 +45,7 @@ const App = () => {
   };
 
   const removeOrder = (id, name) => {
+    console.log(name, "name");
     setOrders(
       orders.filter((order) => {
         return order.name !== name;
@@ -124,6 +132,7 @@ const App = () => {
               orders={orders}
               updateOrderQty={updateOrderQty}
               removeOrder={removeOrder}
+              total={total}
             />
           )}
         />
