@@ -23,7 +23,6 @@ const App = () => {
   const updateTotal = () => {
     let num = 0;
     for (let i = 0; i < orders.length; i++) {
-      console.log(orders[i]);
       num = num + Number(orders[i].price) * orders[i].qty;
     }
     setTotal(roundTotal(num));

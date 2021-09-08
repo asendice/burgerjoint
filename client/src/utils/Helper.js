@@ -2,9 +2,15 @@ const roundTotal = (num) => {
   if (num && num.length > 7) {
     return Math.round(num * 10000) / 10000;
   } else {
-    return Math.round(num * 100) / 100;
+    let number = Math.round(num * 100) / 100;
+    let str = number.toString();
+    let arr = str.split(".");
+    if (arr.length > 1 && arr[1].length === 1) {
+      return str + "0";
+    } else {
+      return str;
+    }
   }
 };
-
 
 export { roundTotal };

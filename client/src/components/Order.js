@@ -4,11 +4,6 @@ import { FaArrowLeft } from "react-icons/fa";
 import OrderItem from "./OrderItem";
 
 const Order = ({ orders, updateOrderQty, removeOrder, total }) => {
-
-
-
-  
-
   const renderOrders = () => {
     if (orders.length > 0) {
       return orders.map((order) => {
@@ -45,8 +40,10 @@ const Order = ({ orders, updateOrderQty, removeOrder, total }) => {
       </div>
       <div className="orders-container">{renderOrders()}</div>
       <div className="place-order">
-        Place Order 
-        {total > 0 ? `$${total}` : ""}
+        <div>Place Order </div>
+        <div style={{ display: `${total > 0 ? "" : "none"}` }}>
+          {total > 0 ? `$${total}` : ""}
+        </div>
       </div>
     </div>
   );
