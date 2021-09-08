@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import bji from "../img/bji.png";
 
-const NavBar = ({ url }) => {
+const NavBar = ({ num }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleNavMenu = () => {
@@ -73,7 +73,7 @@ const NavBar = ({ url }) => {
               className="nav-links-link"
               to="/order"
             >
-              <button className="nav-btn">Order Now</button>
+              <button className="nav-btn">{num > 0 ? `Place Order  (${num})`: "Order Now"}</button>
             </NavLink>
           </li>
         </ul>

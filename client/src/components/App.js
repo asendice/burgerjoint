@@ -106,7 +106,7 @@ const App = () => {
   return (
     <div className="app">
       <BrowserRouter>
-        <NavBar />
+        <NavBar num={orders.length} />
         <Route
           exact
           path="/"

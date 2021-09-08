@@ -545,7 +545,6 @@ button {
   flex-wrap: wrap;
   font-size: 1.4rem;
   font-family: "Source Sans Pro", sans-serif;
-  margin-top: 50px;
   line-height: 2rem;
   text-align: center;
 }
@@ -555,7 +554,8 @@ button {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .menu-card {
@@ -728,7 +728,6 @@ button {
   display: flex;
   justify-content: center;
   font-family: "Roboto", sans-serif;
-  width: 120px;
   font-size: 1.4rem;
 }
 
@@ -745,7 +744,7 @@ button {
   font-family: "Ultra", serif;
   text-shadow: -4px 3px #f58220;
   margin-top: 60px;
-  font-size: 4rem;
+  font-size: 4.8rem;
 }
 
 .membership-top p {
@@ -815,6 +814,7 @@ button {
 }
 
 .membership-bot h1 {
+  text-align: center;
   margin-top: 40px;
   color: rgb(53, 53, 53);
   font-family: "Roboto", sans-serif;
@@ -1082,10 +1082,18 @@ button {
   }
 
   .order-name {
+    align-items: flex-end;
     width: 180px;
   }
 
   .order-name h2 {
     font-size: 14px;
+  }
+  .place-order {
+    width: 200px;
+  }
+
+  .place-order div {
+    font-size: 1rem;
   }
 }
