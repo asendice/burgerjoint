@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
@@ -9,30 +10,30 @@ const Footer = () => {
     <div className="footer">
       <ul className="footer-links">
         <li>
-          <a href="#">Locations</a>
+          <Link to="/">Locations</Link>
         </li>
         <li>
-          <a href="#">Contact Us</a>
+          <Link to="/">Contact Us</Link>
         </li>
         <li>
-          <a href="#">About</a>
+          <Link to="/">About</Link>
         </li>
         <li>
-          <a href="#">Membership</a>
+          <Link to="/">Membership</Link>
         </li>
       </ul>
       <ul className="footer-links">
         <li>
-          <a href="#">Privacy Policy</a>
+          <Link to="/">Privacy Policy</Link>
         </li>
         <li>
-          <a href="#">Accessibility</a>
+          <Link to="/">Accessibility</Link>
         </li>
         <li>
-          <a href="#">Terms & Conditions</a>
+          <Link to="/">Terms & Conditions</Link>
         </li>
         <li>
-          <a href="#">Supply Chain</a>
+          <Link to="/">Supply Chain</Link>
         </li>
       </ul>
       <div className="footer-section-right">

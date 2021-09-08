@@ -73,7 +73,7 @@ const NavBar = ({ num }) => {
               className="nav-links-link"
               to="/order"
             >
-              <button className="nav-btn">{num > 0 ? `Place Order  (${num})`: "Order Now"}</button>
+              <button className="nav-btn">{num > 0 ? `View Order  (${num})`: "Order Now"}</button>
             </NavLink>
           </li>
         </ul>

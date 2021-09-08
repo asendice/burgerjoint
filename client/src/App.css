@@ -374,11 +374,12 @@ button {
 }
 
 .footer li a {
+  color: #fff;
+  text-decoration: none;
   font-family: "Roboto", sans-serif;
   transition: all 0.4s ease;
 }
 .footer li a:hover {
-  color: #f58220;
   cursor: pointer;
 }
 
@@ -400,8 +401,6 @@ button {
 }
 
 .footer-icons span:hover {
-  color: #f58220;
-  border: solid #f58220 1px;
   cursor: pointer;
 }
 
