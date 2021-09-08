@@ -9,7 +9,7 @@ const Landing = () => {
         <h1> WATERING </h1>
         <h1> TASTE</h1>
         <NavLink to="/menu">
-          <button>See Full Menu</button>
+          <button className="orange-button">See Full Menu</button>
         </NavLink>
       </div>
     </div>

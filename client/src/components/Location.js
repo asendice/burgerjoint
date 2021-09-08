@@ -43,7 +43,7 @@ const Location = () => {
           <h4>Sunday - Saturday</h4>
           <p>(11:00am - 6:00pm)</p>
           <NavLink to="/menu">
-            <button>See Full Menu</button>
+            <button className="orange-button">See Full Menu</button>
           </NavLink>
         </div>
       </div>

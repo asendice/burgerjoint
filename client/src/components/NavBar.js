@@ -47,33 +47,14 @@ const NavBar = ({ num }) => {
               Membership
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              activeClassName="nav-link-active"
-              onClick={() => closeMenu()}
-              className="nav-links-link"
-              to="/locations"
-            >
-              Locations
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              activeClassName="nav-link-active"
-              onClick={() => closeMenu()}
-              className="nav-links-link"
-              to="/contact"
-            >
-              Contact Us
-            </NavLink>
-          </li>
+         
           <li>
             <NavLink
               onClick={() => closeMenu()}
               className="nav-links-link"
               to="/order"
             >
-              <button className="nav-btn">{num > 0 ? `View Order  (${num})`: "Order Now"}</button>
+              <button className="nav-btn orange-button ">{num > 0 ? `View Order  (${num})`: "Order Now"}</button>
             </NavLink>
           </li>
         </ul>

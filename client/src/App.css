@@ -8,6 +8,7 @@
   background-color: rgb(53, 53, 53);
   height: 15vh;
   display: flex;
+  align-items: center;
 }
 
 .nav-links {
@@ -131,7 +132,7 @@
   text-shadow: -6px 4px #f58220;
 }
 
-button:hover {
+.orange-button:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
@@ -197,7 +198,7 @@ button:hover {
   align-self: flex-end;
 }
 
-button {
+.orange-button {
   font-family: "Roboto", sans-serif;
   padding: 20px;
   background-color: #f58220;
@@ -205,7 +206,6 @@ button {
   color: #fff;
   border: solid 1px #f58220;
   font-size: 1.3rem;
-  margin-top: 20px;
   transition: 0.3s ease-in-out;
   align-self: center;
 }
@@ -515,7 +515,7 @@ button {
 }
 
 .back-arrow {
-  transition: all 0.4s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 #back-menu {
@@ -525,12 +525,8 @@ button {
   font-size: 1.4rem;
 }
 
-.back-arrow:hover #back-menu {
+.back-btn a:hover #back-menu {
   visibility: visible;
-}
-
-.back-arrow:hover {
-  transform: scale(1.1);
 }
 
 .menu-title img {
@@ -646,6 +642,7 @@ button {
 
 .no-order {
   align-self: center;
+  text-align: center;
 }
 
 .remove-order {
@@ -1034,6 +1031,10 @@ button {
   .title h1 {
     font-size: 3rem;
   }
+  .bji-icon {
+    height: 50px;
+    width: 50px;
+  }
 
   .menu-title img {
     width: 200px;
@@ -1082,12 +1083,17 @@ button {
 
   .order-name {
     align-items: flex-end;
-    width: 180px;
+    width: 170px;
   }
 
   .order-name h2 {
     font-size: 14px;
   }
+
+  .order-qty {
+    width: 70px;
+  }
+
   .place-order {
     width: 200px;
   }

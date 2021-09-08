@@ -58,7 +58,7 @@ const Featured = ({ setSelectedCategory, categories }) => {
       </div>
 
       <NavLink to="/menu">
-        <button>See Full Menu</button>
+        <button className="orange-button">See Full Menu</button>
       </NavLink>
     </div>
   );
