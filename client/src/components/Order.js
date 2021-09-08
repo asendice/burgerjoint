@@ -32,7 +32,7 @@ const Order = ({ orders, updateOrderQty, removeOrder, total }) => {
       <div className="menu-title">
         <div className="back-btn">
           <Link to="/menu">
-            <FaArrowLeft />
+            <FaArrowLeft className="back-arrow"/>
             <span id="back-menu">Back to Menu</span>
           </Link>
         </div>

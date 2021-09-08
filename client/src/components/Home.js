@@ -4,11 +4,11 @@ import Featured from "./Featured";
 import Gram from "./Gram";
 import Location from "./Location";
 
-const Home = () => {
+const Home = ({ setSelectedCategory, categories }) => {
   return (
     <div className="app">
       <Landing />
-      <Featured />
+      <Featured setSelectedCategory={setSelectedCategory} categories={categories} />
       <Gram />
       <Location />
     </div>

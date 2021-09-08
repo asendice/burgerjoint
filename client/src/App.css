@@ -116,6 +116,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   width: 90%;
 }
 
@@ -162,6 +163,10 @@ button:hover {
   justify-content: center;
   align-items: center;
   margin-top: 25px;
+}
+
+.card-container a {
+  text-decoration: none;
 }
 
 .card {
@@ -508,11 +513,10 @@ button {
   text-decoration: none;
   color: rgb(53, 53, 53);
   font-size: 2rem;
-  transition: all .4s ease-in-out;
 }
 
-.back-btn a:hover {
-  transform: scale(1.1);
+.back-arrow {
+  transition: all 0.4s ease-in-out;
 }
 
 #back-menu {
@@ -522,14 +526,18 @@ button {
   font-size: 1.4rem;
 }
 
-.back-btn a:hover #back-menu {
+.back-arrow:hover #back-menu {
   visibility: visible;
+}
+
+.back-arrow:hover {
+  transform: scale(1.1);
 }
 
 .menu-title img {
   transform: scale(0.7) rotate(2deg);
   width: 300px;
-  margin-top: -20px;
+  margin-top: -10px;
 }
 
 .menu-description {
@@ -717,7 +725,7 @@ button {
 }
 
 .place-order div {
-  display: flex; 
+  display: flex;
   justify-content: center;
   font-family: "Roboto", sans-serif;
   width: 120px;
@@ -1028,10 +1036,18 @@ button {
     font-size: 3rem;
   }
 
+  .menu-title img {
+    width: 200px;
+  }
+
   .card {
     padding: 24px;
     height: 205px;
     width: 250px;
+  }
+
+  .card img {
+    width: 200px;
   }
 
   .featured-title {
@@ -1072,6 +1088,4 @@ button {
   .order-name h2 {
     font-size: 14px;
   }
-
-  
 }

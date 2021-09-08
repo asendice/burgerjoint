@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import brush from "../img/brush.png";
 import { FaAngleDown } from "react-icons/fa";
 import { FaAngleUp } from "react-icons/fa";
@@ -12,6 +12,10 @@ const Menu = ({
   setSelectedCategory,
 }) => {
   const [showMobile, setShowMobile] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [selectedCategory]);
 
   const renderMenu = () => {
     if (menu.length > 0 && selectedCategory.name === "Menu") {

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Landing = () => {
   return (
@@ -7,7 +8,9 @@ const Landing = () => {
         <h1>MOUTH </h1>
         <h1> WATERING </h1>
         <h1> TASTE</h1>
-        <button>Order Now</button>
+        <NavLink to="/menu">
+          <button>See Full Menu</button>
+        </NavLink>
       </div>
     </div>
   );

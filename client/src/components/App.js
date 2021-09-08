@@ -33,8 +33,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    console.log(orders, "orders");
-  }, [orders]);
+    console.log(selectedCategory, "selectedCategory");
+  }, [selectedCategory]);
 
   const updateOrderQty = (qty, name) => {
     const updateOrders = [...orders];
@@ -107,7 +107,16 @@ const App = () => {
     <div className="app">
       <BrowserRouter>
         <NavBar />
-        <Route exact path="/" component={Home} />
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <Home
+              setSelectedCategory={setSelectedCategory}
+              categories={categories}
+            />
+          )}
+        />
         <Route
           exact
           path="/menu"

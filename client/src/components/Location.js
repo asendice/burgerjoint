@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import GoogleMapReact from "google-map-react";
 
 const Location = () => {
@@ -11,10 +12,8 @@ const Location = () => {
   };
 
   const Marker = (props) => {
-    return (
-      <div className="marker"></div>
-    )
-  }
+    return <div className="marker"></div>;
+  };
 
   return (
     <div className="landing-section">
@@ -24,14 +23,17 @@ const Location = () => {
           <GoogleMapReact
             bootstrapURLKeys={{
               key: "AIzaSyDXhAPKlZAgvV88qB10EHW8Di3jRhUOCDg",
-              v: '3.31',
+              v: "3.31",
               language: "en",
             }}
             defaultCenter={defaultProps.center}
             defaultZoom={defaultProps.zoom}
             resetBoundsOnResize={true}
           >
-            <Marker lat={defaultProps.center.lat} lng={defaultProps.center.lng}/>
+            <Marker
+              lat={defaultProps.center.lat}
+              lng={defaultProps.center.lng}
+            />
           </GoogleMapReact>
         </div>
         <div className="location-card">
@@ -40,7 +42,9 @@ const Location = () => {
           <p>(530) 546-7443 </p>
           <h4>Sunday - Saturday</h4>
           <p>(11:00am - 6:00pm)</p>
-          <button>Order Now</button>
+          <NavLink to="/menu">
+            <button>Order Now</button>
+          </NavLink>
         </div>
       </div>
     </div>
