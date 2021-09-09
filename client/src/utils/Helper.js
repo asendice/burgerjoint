@@ -7,6 +7,8 @@ const roundTotal = (num) => {
     let arr = str.split(".");
     if (arr.length > 1 && arr[1].length === 1) {
       return str + "0";
+    } else if (!arr[1] || arr[1].length === 0) {
+      return str + ".00";
     } else {
       return str;
     }
