@@ -50,7 +50,7 @@ const Options = ({ showModal, setShowModal, setInfo, total }) => {
         <label>Last Name</label>
         <input type="text" name="last" />
         <label>Phone Number</label>
-        <input type="text" name="ptn" />
+        <input type="tel" name="ptn" />
         <label>Address</label>
         <input type="text" name="address" />
         <label>Apt / Suite #</label>

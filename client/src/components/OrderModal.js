@@ -4,7 +4,8 @@ import { roundTotal } from "../utils/Helper";
 import { FaWindowClose } from "react-icons/fa";
 
 const OrderModal = ({ showModal, setShowModal, orders, info, total }) => {
-  const [paymentToggle, setPaymentToggle] = useState(false);
+
+  console.log(info, "info")
 
   const dismissModal = (e) => {
     if (e.target.id === "order-modal") {

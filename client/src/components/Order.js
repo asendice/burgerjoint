@@ -7,7 +7,17 @@ import OrderModal from "./OrderModal";
 
 const Order = ({ orders, updateOrderQty, removeOrder, total }) => {
   const [showModal, setShowModal] = useState(false);
-  const [info, setInfo] = useState({});
+  const [info, setInfo] = useState({
+    first: "",
+    last: "",
+    ptn: "",
+    address: "",
+    apt: "",
+    city: "",
+    state: "",
+    zip: "",
+    instructions: "",
+  });
 
   const renderOrders = () => {
     if (orders.length > 0) {
@@ -50,6 +60,7 @@ const Order = ({ orders, updateOrderQty, removeOrder, total }) => {
         showModal={showModal}
         setShowModal={setShowModal}
         total={total}
+        info={info}
         setInfo={setInfo}
       />
       <OrderModal

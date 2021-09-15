@@ -1101,6 +1101,12 @@
   margin-bottom: 10px;
 }
 
+.form-err-msg {
+  font-size: .8rem;
+  color: rgb(194, 49, 49);
+  font-family: "Roboto", sans-serif;
+}
+
 @media only screen and (max-width: 1375px) {
   .menu-box {
     width: 720px;
