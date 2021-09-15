@@ -7,6 +7,7 @@ import OrderModal from "./OrderModal";
 
 const Order = ({ orders, updateOrderQty, removeOrder, total }) => {
   const [showModal, setShowModal] = useState(false);
+  const [info, setInfo] = useState({});
 
   const renderOrders = () => {
     if (orders.length > 0) {
@@ -45,8 +46,19 @@ const Order = ({ orders, updateOrderQty, removeOrder, total }) => {
         <h1>Your Order</h1>
       </div>
       <div className="orders-container">{renderOrders()}</div>
-      <Options />
-      <OrderModal showModal={showModal} setShowModal={setShowModal} orders={orders} />
+      <Options
+        showModal={showModal}
+        setShowModal={setShowModal}
+        total={total}
+        setInfo={setInfo}
+      />
+      <OrderModal
+        info={info}
+        showModal={showModal}
+        setShowModal={setShowModal}
+        orders={orders}
+        total={total}
+      />
     </div>
   );
 };
