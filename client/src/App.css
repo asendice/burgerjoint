@@ -944,13 +944,13 @@
 .modal-title {
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  border-bottom: rgb(53, 53, 53) solid 1px;
 }
 
-.modal-title h3 {
+.modal-title h2 {
   font-family: "Roboto", sans-serif;
   color: rgb(53, 53, 53);
-  font-size: 1rem;
 }
 
 .modal-total {
@@ -965,15 +965,16 @@
 .modal-order h4 {
   align-self: flex-start;
   width: 220px;
+  font-size: 0.8rem;
 }
 .modal-order h5 {
-  width: 50px;
+  width: 30px;
+  font-size: 0.8rem;
 }
 
 .modal-orders {
   display: flex;
   flex-direction: column;
-  border-bottom: solid rgb(53, 53, 53) 1px;
 }
 
 .modal-address {
@@ -981,11 +982,68 @@
   width: 90%;
   flex-direction: column;
   justify-content: flex-start;
-  border-bottom: rgb(53, 53, 53) solid 1px;
+}
+.modal-address h3 {
+  font-family: "Roboto", sans-serif;
+  color: rgb(53, 53, 53);
+  font-size: 1rem;
+}
+
+.modal-address h4 {
+  font-size: 0.8rem;
 }
 
 .modal-instructions {
-  width: 90%;
+  padding: 5px;
+  font-size: 0.8rem;
+  align-self: flex-start;
+}
+
+.payment {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+.payment-selector {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.payment-selector h2 {
+  font-family: "Roboto", sans-serif;
+  margin-left: 3px;
+  color: rgb(53, 53, 53);
+}
+
+.payment-selector:hover {
+  cursor: pointer;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.payment-form label {
+  font-family: "Roboto", sans-serif;
+}
+
+.payment-form-cvc {
+  display: flex;
+}
+
+.payment-btn {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #f58220;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
 }
 
 .close-modal:hover {

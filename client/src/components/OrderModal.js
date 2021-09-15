@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Payment from "../components/Payment";
 import { roundTotal } from "../utils/Helper";
 import { FaWindowClose } from "react-icons/fa";
 
@@ -28,8 +29,7 @@ const OrderModal = ({ showModal, setShowModal, orders, info, total }) => {
             />
           </div>
           <div className="modal-title">
-            <h3>Order Overview</h3>
-            <h3>{orders.length} items</h3>
+            <h2>Order Overview</h2>
           </div>
           <div className="modal-orders">
             {orders.map((order) => {
@@ -44,14 +44,14 @@ const OrderModal = ({ showModal, setShowModal, orders, info, total }) => {
             <div className="modal-total"> Total: ${total}</div>
           </div>
           <div className="modal-title">
-            <h3>Address Overview</h3>
+            <h2>Delivery Address </h2>
           </div>
           {info ? (
             <>
               <div className="modal-address">
-                <h4>
+                <h3>
                   {info.first} {info.last}
-                </h4>
+                </h3>
                 <h4>{info.address} </h4>
                 <h4>{info.apt} </h4>
                 <h4>
@@ -61,17 +61,18 @@ const OrderModal = ({ showModal, setShowModal, orders, info, total }) => {
                 <h4>{info.ptn} </h4>
               </div>
               <div className="modal-title">
-                <h3>Delivery Instructions</h3>
+                <h2>Delivery Instructions</h2>
               </div>
               {info.instructions && info.instructions.length > 0 ? (
-                <div className="modal-instructions">{info.instructions}</div>
+                <h4 className="modal-instructions">{info.instructions}</h4>
               ) : (
-                "*No Special instructions"
+                <h4 className="modal-instructions">*No Special instructions</h4>
               )}
             </>
           ) : (
             ""
           )}
+          <Payment total={total} />
         </div>
       </div>
     );
