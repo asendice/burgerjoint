@@ -1,21 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import useDeliveryForm from "./useDeliveryForm";
+import validate from "./validateDeliveryForm";
 
 const Options = ({ showModal, setShowModal, setInfo, total }) => {
   const [delivery, setDelivery] = useState(true);
+  const { handleChange, handleSubmit, values, errors } =
+    useDeliveryForm(validate);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    let obj = {};
-    obj.first = e.target.first.value;
-    obj.last = e.target.last.value;
-    obj.ptn = e.target.ptn.value;
-    obj.address = e.target.address.value;
-    obj.apt = e.target.apt.value;
-    obj.city = e.target.city.value;
-    obj.state = e.target.state.value;
-    obj.zip = e.target.zip.value;
-    obj.instructions = e.target.instructions.value;
-    setInfo(obj);
+  useEffect(() => {
+    setInfo(values);
+  }, [values]);
+
+  const overviewClick = () => {
+    console.log(errors, "errors");
+    console.log(Object.entries(errors).length === 0, "true or false");
+
+    if (Object.entries(errors).length === 0) {
+      setShowModal(!showModal);
+    } else {
+      return null;
+    }
   };
 
   return (
@@ -46,28 +50,82 @@ const Options = ({ showModal, setShowModal, setInfo, total }) => {
         style={{ display: `${!delivery ? "none" : ""}` }}
       >
         <label>First Name</label>
-        <input type="text" name="first" />
+        <input
+          type="text"
+          name="first"
+          value={values.first}
+          onChange={handleChange}
+        />
+        {errors.first && <p className="form-err-msg">{errors.first}</p>}
         <label>Last Name</label>
-        <input type="text" name="last" />
+        <input
+          type="text"
+          name="last"
+          value={values.last}
+          onChange={handleChange}
+        />
+        {errors.last && <p className="form-err-msg">{errors.last}</p>}
         <label>Phone Number</label>
-        <input type="tel" name="ptn" />
+        <input
+          type="tel"
+          name="ptn"
+          value={values.ptn}
+          onChange={handleChange}
+        />
+        {errors.ptn && <p className="form-err-msg">{errors.ptn}</p>}
         <label>Address</label>
-        <input type="text" name="address" />
+        <input
+          type="text"
+          name="address"
+          value={values.address}
+          onChange={handleChange}
+        />
+        {errors.address && <p className="form-err-msg">{errors.address}</p>}
         <label>Apt / Suite #</label>
-        <input type="text" name="apt" />
+        <input
+          type="text"
+          name="apt"
+          value={values.apt}
+          onChange={handleChange}
+        />
         <label>City</label>
-        <input type="text" name="city" />
+        <input
+          type="text"
+          name="city"
+          value={values.city}
+          onChange={handleChange}
+        />
+        {errors.city && <p className="form-err-msg">{errors.city}</p>}
         <label>State</label>
-        <input type="text" name="state" />
+        <input
+          type="text"
+          name="state"
+          value={values.state}
+          onChange={handleChange}
+        />
+        {errors.state && <p className="form-err-msg">{errors.state}</p>}
         <label>Postal Code</label>
-        <input type="text" name="zip" />
+        <input
+          type="text"
+          name="zip"
+          value={values.zip}
+          onChange={handleChange}
+        />
+        {errors.zip && <p className="form-err-msg">{errors.zip}</p>}
+
         <label>Delivery Instructions</label>
-        <input type="text" name="instructions" />
+        <input
+          type="text"
+          name="instructions"
+          value={values.instructions}
+          onChange={handleChange}
+        />
+
         <button
           type="submit"
           value="Submit"
           className="place-order"
-          onClick={() => setShowModal(!showModal)}
+          onClick={() => overviewClick()}
         >
           <div>Order Overview </div>
           <div style={{ display: `${total > 0 ? "" : "none"}` }}>
@@ -77,7 +135,7 @@ const Options = ({ showModal, setShowModal, setInfo, total }) => {
       </form>
       <button
         className="place-order"
-        onClick={() => setShowModal(!showModal)}
+        onClick={() => overviewClick()}
         style={{ display: `${delivery ? "none" : ""}` }}
       >
         <div>Order Overview </div>

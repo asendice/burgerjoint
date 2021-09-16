@@ -47,6 +47,7 @@ const Payment = ({ total }) => {
             <input
               name="cvc"
               type="text"
+              placeholder="000"
               onChange={handleChange}
               value={values.cvc}
             />
@@ -57,6 +58,7 @@ const Payment = ({ total }) => {
         <input
           type="text"
           name="name"
+          placeholder="Jim Smith"
           onChange={handleChange}
           value={values.name}
         />
