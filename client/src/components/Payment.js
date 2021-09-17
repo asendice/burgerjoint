@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { roundTotal } from "../utils/Helper";
-import { FaPlus, FaMinus } from "react-icons/fa";
 import useForm from "./useForm";
 import validateForm from "./validateForm";
 
 const Payment = ({ total, cancel, setShowModal }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(validateForm);
-  console.log("errors from payment", errors);
-  console.log("Cancel", cancel);
 
   return (
     <div className="payment">
@@ -53,7 +50,7 @@ const Payment = ({ total, cancel, setShowModal }) => {
         <input
           type="text"
           name="name"
-          placeholder="Jim Smith"
+          placeholder="Rick Grimes"
           onChange={handleChange}
           value={values.name}
         />

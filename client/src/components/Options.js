@@ -57,6 +57,7 @@ const Options = ({ setInfo, total, info, orders }) => {
           name="first"
           value={values.first}
           onChange={handleChange}
+          placeholder="Rick"
         />
         {errors.first && <p className="form-err-msg">{errors.first}</p>}
         <label>Last Name</label>
@@ -65,6 +66,7 @@ const Options = ({ setInfo, total, info, orders }) => {
           name="last"
           value={values.last}
           onChange={handleChange}
+          placeholder="Grimes"
         />
         {errors.last && <p className="form-err-msg">{errors.last}</p>}
         <label>Phone Number</label>
@@ -73,6 +75,7 @@ const Options = ({ setInfo, total, info, orders }) => {
           name="ptn"
           value={values.ptn}
           onChange={handleChange}
+          placeholder="5555550123"
         />
         {errors.ptn && <p className="form-err-msg">{errors.ptn}</p>}
         <label>Address</label>
@@ -81,6 +84,7 @@ const Options = ({ setInfo, total, info, orders }) => {
           name="address"
           value={values.address}
           onChange={handleChange}
+          placeholder="817 Cherokee Ave SE"
         />
         {errors.address && <p className="form-err-msg">{errors.address}</p>}
         <label>Apt / Suite #</label>
@@ -96,6 +100,7 @@ const Options = ({ setInfo, total, info, orders }) => {
           name="city"
           value={values.city}
           onChange={handleChange}
+          placeholder="Atlanta"
         />
         {errors.city && <p className="form-err-msg">{errors.city}</p>}
         <label>State</label>
@@ -104,6 +109,7 @@ const Options = ({ setInfo, total, info, orders }) => {
           name="state"
           value={values.state}
           onChange={handleChange}
+          placeholder="GA"
         />
         {errors.state && <p className="form-err-msg">{errors.state}</p>}
         <label>Postal Code</label>
@@ -112,6 +118,7 @@ const Options = ({ setInfo, total, info, orders }) => {
           name="zip"
           value={values.zip}
           onChange={handleChange}
+          placeholder="30315"
         />
         {errors.zip && <p className="form-err-msg">{errors.zip}</p>}
 
@@ -121,6 +128,7 @@ const Options = ({ setInfo, total, info, orders }) => {
           name="instructions"
           value={values.instructions}
           onChange={handleChange}
+          placeholder="Gate code is #1225"
         />
 
         <button
@@ -152,6 +160,7 @@ const Options = ({ setInfo, total, info, orders }) => {
         orders={orders}
         total={total}
         errors={errors}
+        delivery={delivery}
       />
     </div>
   );
