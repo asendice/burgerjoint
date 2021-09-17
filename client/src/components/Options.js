@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import useDeliveryForm from "./useDeliveryForm";
 import validate from "./validateDeliveryForm";
+import OrderModal from "./OrderModal";
 
-const Options = ({ showModal, setShowModal, setInfo, total }) => {
+const Options = ({ setInfo, total, info, orders }) => {
   const [delivery, setDelivery] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+
   const { handleChange, handleSubmit, values, errors } =
     useDeliveryForm(validate);
 
@@ -12,14 +15,13 @@ const Options = ({ showModal, setShowModal, setInfo, total }) => {
   }, [values]);
 
   const overviewClick = () => {
-    console.log(errors, "errors");
-    console.log(Object.entries(errors).length === 0, "true or false");
-
-    if (Object.entries(errors).length === 0) {
-      setShowModal(!showModal);
+    if (showModal) {
+      setShowModal(false);
     } else {
-      return null;
+      setShowModal(true);
     }
+
+    // console.log(Object.entries(errors).length === 0, "true or false");
   };
 
   return (
@@ -143,6 +145,14 @@ const Options = ({ showModal, setShowModal, setInfo, total }) => {
           {total > 0 ? `$${total}` : ""}
         </div>
       </button>
+      <OrderModal
+        info={info}
+        showModal={showModal}
+        setShowModal={setShowModal}
+        orders={orders}
+        total={total}
+        errors={errors}
+      />
     </div>
   );
 };

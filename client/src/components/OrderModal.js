@@ -1,11 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Payment from "../components/Payment";
 import { roundTotal } from "../utils/Helper";
 import { FaWindowClose } from "react-icons/fa";
 
-const OrderModal = ({ showModal, setShowModal, orders, info, total }) => {
+const OrderModal = ({
+  showModal,
+  setShowModal,
+  orders,
+  info,
+  total,
+  errors,
+}) => {
+  const [cancel, setCancel] = useState(false);
 
-  console.log(info, "info")
+  useEffect(() => {
+    if (Object.keys(errors).length !== 0) {
+      setCancel(true);
+    } else {
+      setCancel(false);
+    }
+  }, [errors]);
+
+  console.log(cancel, "cancel")
+  console.log(errors, "errors")
 
   const dismissModal = (e) => {
     if (e.target.id === "order-modal") {
@@ -47,7 +64,7 @@ const OrderModal = ({ showModal, setShowModal, orders, info, total }) => {
           <div className="modal-title">
             <h2>Delivery Address </h2>
           </div>
-          {info ? (
+          {info && !cancel ? (
             <>
               <div className="modal-address">
                 <h3>
@@ -71,9 +88,9 @@ const OrderModal = ({ showModal, setShowModal, orders, info, total }) => {
               )}
             </>
           ) : (
-            ""
+            <h3 className="address-err-msg ">*Invalid Address</h3>
           )}
-          <Payment total={total} />
+          <Payment total={total} cancel={cancel} setShowModal={setShowModal} />
         </div>
       </div>
     );

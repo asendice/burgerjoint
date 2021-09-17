@@ -916,7 +916,7 @@
   bottom: 0;
   height: 100%;
   overflow: hidden;
-  background-color: rgb(1, 1, 1, 0.6);
+  background-color: rgb(1, 1, 1, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -926,7 +926,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 400px;
   width: 350px;
   background-color: #fff;
   border-radius: 10px;
@@ -1032,18 +1031,44 @@
   font-family: "Roboto", sans-serif;
 }
 
+.payment-form input {
+  padding: 5px;
+}
+
 .payment-form-cvc {
   display: flex;
 }
 
 .payment-btn {
   margin-top: 5px;
-  padding: 5px;
+  padding: 10px;
   border-radius: 10px;
   background-color: #f58220;
+  border: none;
   color: #fff;
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
+}
+
+.payment-btn {
+  cursor: pointer;
+}
+
+.cancel-payment {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  border: solid rgb(194, 49, 49) 2px;
+  color: rgb(194, 49, 49);
+  transition: all 0.2s ease-in-out;
+}
+
+.cancel-payment:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: rgb(194, 49, 49);
 }
 
 .close-modal:hover {
@@ -1103,6 +1128,13 @@
 
 .form-err-msg {
   font-size: 0.8rem;
+  color: rgb(194, 49, 49);
+  font-family: "Roboto", sans-serif;
+}
+
+.address-err-msg {
+  align-self: flex-start;
+  font-size: 1.2rem;
   color: rgb(194, 49, 49);
   font-family: "Roboto", sans-serif;
 }

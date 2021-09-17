@@ -15,6 +15,7 @@ const useDeliveryForm = (validate) => {
 
   const [errors, setErrors] = useState({});
 
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({
@@ -26,9 +27,10 @@ const useDeliveryForm = (validate) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validate(values));
+    
   };
 
-  return { handleChange, handleSubmit, values, errors };
+  return { handleChange, handleSubmit, values, errors,  };
 };
 
 export default useDeliveryForm;

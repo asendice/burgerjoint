@@ -6,7 +6,7 @@ export default function validateForm(values) {
   // Card Number input validation
   if (!values.number) {
     errors.number = "*Card Number Is Required";
-  } else if (values.number.length != 16) {
+  } else if (values.number.length !== 16) {
     errors.number = "*Card Number Must Be 16 Digits";
   } else if (!values.number.match(numberRegex)) {
     errors.number = "*Card Number Must Contain Only Numbers";

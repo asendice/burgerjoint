@@ -3,10 +3,8 @@ import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import OrderItem from "./OrderItem";
 import Options from "./Options";
-import OrderModal from "./OrderModal";
 
 const Order = ({ orders, updateOrderQty, removeOrder, total }) => {
-  const [showModal, setShowModal] = useState(false);
   const [info, setInfo] = useState({});
 
   const renderOrders = () => {
@@ -47,19 +45,12 @@ const Order = ({ orders, updateOrderQty, removeOrder, total }) => {
       </div>
       <div className="orders-container">{renderOrders()}</div>
       <Options
-        showModal={showModal}
-        setShowModal={setShowModal}
         total={total}
         info={info}
         setInfo={setInfo}
-      />
-      <OrderModal
-        info={info}
-        showModal={showModal}
-        setShowModal={setShowModal}
         orders={orders}
-        total={total}
       />
+      
     </div>
   );
 };
