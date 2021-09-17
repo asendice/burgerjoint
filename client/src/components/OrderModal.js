@@ -12,8 +12,9 @@ const OrderModal = ({
   info,
   total,
   errors,
+  cancel,
+  setCancel
 }) => {
-  const [cancel, setCancel] = useState(false);
 
   useEffect(() => {
     if (Object.keys(errors).length !== 0) {
@@ -67,7 +68,7 @@ const OrderModal = ({
               </div>
               {info && !cancel ? (
                 <>
-                  <div className="modal-address">
+                  <div className="modal-text">
                     <h3>
                       {info.first} {info.last}
                     </h3>
@@ -99,11 +100,13 @@ const OrderModal = ({
               <div className="modal-title">
                 <h2>Pick Up Location </h2>
               </div>
-              <h3>Burger Joint Tahoe</h3>
-              <p>493 Brassie Ave, Kings Beach Ca 96143</p>
-              <p>(530) 546-7443 </p>
-              <h4>Sunday - Saturday</h4>
-              <p>(11:00am - 6:00pm)</p>
+              <div className="modal-text">
+                <h3>Burger Joint Tahoe</h3>
+                <h4>493 Brassie Ave, Kings Beach Ca 96143</h4>
+                <h4>(530) 546-7443 </h4>
+                <h4>Sunday - Saturday</h4>
+                <h4>(11:00am - 6:00pm)</h4>
+              </div>
             </>
           )}
           <Payment total={total} cancel={cancel} setShowModal={setShowModal} />

@@ -50,7 +50,6 @@ const Order = ({ orders, updateOrderQty, removeOrder, total }) => {
         setInfo={setInfo}
         orders={orders}
       />
-      
     </div>
   );
 };

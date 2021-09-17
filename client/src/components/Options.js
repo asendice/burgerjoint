@@ -6,6 +6,7 @@ import OrderModal from "./OrderModal";
 const Options = ({ setInfo, total, info, orders }) => {
   const [delivery, setDelivery] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [cancel, setCancel] = useState(false);
 
   const { handleChange, handleSubmit, values, errors } =
     useDeliveryForm(validate);
@@ -20,15 +21,16 @@ const Options = ({ setInfo, total, info, orders }) => {
     } else {
       setShowModal(true);
     }
-
-    // console.log(Object.entries(errors).length === 0, "true or false");
   };
 
   return (
     <div className="delivery">
       <div className="delivery-options">
         <button
-          onClick={() => setDelivery(false)}
+          onClick={() => {
+            setDelivery(false);
+            setCancel(false);
+          }}
           className="delivery-btn pick-up"
           style={{
             backgroundColor: `${!delivery ? "#f58220" : ""}`,
@@ -37,7 +39,9 @@ const Options = ({ setInfo, total, info, orders }) => {
           Pick Up
         </button>
         <button
-          onClick={() => setDelivery(true)}
+          onClick={() => {
+            setDelivery(true);
+          }}
           className="delivery-btn"
           style={{
             backgroundColor: `${delivery ? "#f58220" : ""}`,
@@ -137,7 +141,7 @@ const Options = ({ setInfo, total, info, orders }) => {
           className="place-order"
           onClick={() => overviewClick()}
         >
-          <div>Order Overview </div>
+          <div>Delivery Order Overview </div>
           <div style={{ display: `${total > 0 ? "" : "none"}` }}>
             {total > 0 ? `$${total}` : ""}
           </div>
@@ -146,9 +150,9 @@ const Options = ({ setInfo, total, info, orders }) => {
       <button
         className="place-order"
         onClick={() => overviewClick()}
-        style={{ display: `${delivery ? "none" : ""}` }}
+        style={{ display: `${delivery ? "none" : ""}`, maxWidth: "500px" }}
       >
-        <div>Order Overview </div>
+        <div> Pick Up Order Overview </div>
         <div style={{ display: `${total > 0 ? "" : "none"}` }}>
           {total > 0 ? `$${total}` : ""}
         </div>
@@ -161,6 +165,8 @@ const Options = ({ setInfo, total, info, orders }) => {
         total={total}
         errors={errors}
         delivery={delivery}
+        cancel={cancel}
+        setCancel={setCancel}
       />
     </div>
   );

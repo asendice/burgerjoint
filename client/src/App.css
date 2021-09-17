@@ -714,8 +714,8 @@
   align-items: center;
   align-self: center;
   padding: 5px;
+  width: 500px;
   margin-bottom: 50px;
-  width: 300px;
   height: 50px;
   background-color: #f58220;
   border: none;
@@ -976,19 +976,19 @@
   flex-direction: column;
 }
 
-.modal-address {
+.modal-text {
   display: flex;
   width: 90%;
   flex-direction: column;
   justify-content: flex-start;
 }
-.modal-address h3 {
+.modal-text h3 {
   font-family: "Roboto", sans-serif;
   color: rgb(53, 53, 53);
   font-size: 1rem;
 }
 
-.modal-address h4 {
+.modal-text h4 {
   font-size: 0.8rem;
 }
 
@@ -1263,6 +1263,9 @@
   .order-total {
     width: 40px;
   }
+  .place-order {
+    width: 400px;
+  }
 
   .delivery-form {
     width: 400px;
@@ -1342,9 +1345,9 @@
   }
 
   .place-order {
-    width: 200px;
+    width: 300px;
   }
-
+  
   .place-order div {
     font-size: 1rem;
   }
