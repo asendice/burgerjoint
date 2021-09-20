@@ -6,7 +6,6 @@ import validateForm from "./validateForm";
 const Payment = ({ total, cancel, setShowModal }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(validateForm);
 
-  console.log(cancel, "cancel from payment")
   return (
     <div className="payment">
       <div className="payment-selector">

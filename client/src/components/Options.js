@@ -16,11 +16,9 @@ const Options = ({ setInfo, total, info, orders }) => {
   }, [values]);
 
   const overviewClick = () => {
-    if (showModal) {
-      setShowModal(false);
-    } else {
+    if (orders.length > 0) {
       setShowModal(true);
-    }
+    } else return null;
   };
 
   return (
@@ -140,9 +138,14 @@ const Options = ({ setInfo, total, info, orders }) => {
           value="Submit"
           className="place-order"
           onClick={() => overviewClick()}
+          style={{ backgroundColor: `${orders.length === 0 ? "#d3d3d3" : ""}` }}
         >
           <div>Delivery Order Overview </div>
-          <div style={{ display: `${total > 0 ? "" : "none"}` }}>
+          <div
+            style={{
+              display: `${total > 0 ? "" : "none"}`,
+            }}
+          >
             {total > 0 ? `$${total}` : ""}
           </div>
         </button>
@@ -150,10 +153,17 @@ const Options = ({ setInfo, total, info, orders }) => {
       <button
         className="place-order"
         onClick={() => overviewClick()}
-        style={{ display: `${delivery ? "none" : ""}`, maxWidth: "500px" }}
+        style={{
+          display: `${delivery ? "none" : ""}`,
+          backgroundColor: `${orders.length === 0 ? "#d3d3d3" : ""}`,
+        }}
       >
         <div> Pick Up Order Overview </div>
-        <div style={{ display: `${total > 0 ? "" : "none"}` }}>
+        <div
+          style={{
+            display: `${total > 0 ? "" : "none"}`,
+          }}
+        >
           {total > 0 ? `$${total}` : ""}
         </div>
       </button>

@@ -111,7 +111,7 @@ const Menu = ({
         <h5>
           {selectedCategory.name !== "Menu"
             ? selectedCategory.name
-            : "Categories"}
+            : "CATEGORIES"}
         </h5>
         <div className="category-menu-mobile-icon">
           {showMobile ? <FaAngleUp /> : <FaAngleDown />}

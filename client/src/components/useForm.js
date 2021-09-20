@@ -9,6 +9,7 @@ const useForm = (validate) => {
   });
 
   const [errors, setErrors] = useState({});
+  const [orderConfirmed, setOrderConfirmed] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,6 +22,7 @@ const useForm = (validate) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validate(values));
+    
   };
 
   return { handleChange, handleSubmit, values, errors };
