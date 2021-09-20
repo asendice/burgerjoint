@@ -136,6 +136,7 @@ const Options = ({ setInfo, total, info, orders }) => {
         <button
           type="submit"
           value="Submit"
+          disabled={orders.length === 0 ? true : false}
           className="place-order"
           onClick={() => overviewClick()}
           style={{ backgroundColor: `${orders.length === 0 ? "#d3d3d3" : ""}` }}
