@@ -1,16 +1,15 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-
+/* Nav */
 .navbar {
   background-color: rgb(53, 53, 53);
   height: 15vh;
   display: flex;
   align-items: center;
 }
-
 .nav-links {
   flex: 2;
   display: flex;
@@ -18,65 +17,52 @@
   justify-content: space-evenly;
   align-items: center;
 }
-
 .nav-links li {
   list-style: none;
 }
-
 .nav-links-link {
   font-size: 1.3rem;
-  font-family: "Roboto", sans-serif;
   text-decoration: none;
   color: #fff;
   transition: all 0.2s ease-in-out;
 }
-
 .nav-links a:hover {
   color: #448faf;
   cursor: pointer;
 }
-
 .nav-link-active {
   color: #448faf;
 }
-
 .nav-btn {
   margin-top: 0px;
 }
-
 .navbar p {
   font-family: "Ultra", serif;
   color: #fff;
 }
-
 .nav-burger-container {
   display: none;
   margin: auto;
 }
-
 .nav-burger {
   border: #fff solid 1px;
   width: 35px;
   padding: 5px;
   border-radius: 10px;
 }
-
 .nav-burger:hover {
   cursor: pointer;
   transform: scale(1.05);
 }
-
 .line {
   width: 25px;
   height: 3px;
   margin: 5px;
   background-color: #fff;
 }
-
 .bji-icon-container {
   flex: 1;
 }
-
 .bji-icon-container-link {
   display: flex;
   flex-direction: column;
@@ -85,18 +71,17 @@
   padding: 10px;
   text-decoration: none;
 }
-
 .bji-icon-container p {
   font-size: 1.6rem;
   font-weight: 800;
   margin: 0 auto;
 }
-
 .bji-icon {
   height: 80px;
   width: 80px;
 }
-
+/* End of Nav */
+/* landing */
 .landing {
   background: url("../src/img/landscape.png");
   background-attachment: fixed;
@@ -107,9 +92,7 @@
   flex-wrap: wrap;
   justify-content: center;
   height: 100vh;
-  margin: 0 auto;
 }
-
 .title {
   display: flex;
   flex-direction: column;
@@ -118,7 +101,6 @@
   align-items: center;
   width: 90%;
 }
-
 .title h1 {
   font-family: "Ultra", serif;
   font-weight: 300;
@@ -129,16 +111,9 @@
   font-size: 7rem;
   text-shadow: -6px 4px #f58220;
 }
-
-.orange-button:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-}
-
 .locations-btn p {
   align-self: center;
 }
-
 .landing-section {
   padding: 24px;
   display: flex;
@@ -147,15 +122,14 @@
   align-items: center;
   background-color: #f2f4f3;
 }
-
 .landing-section-title {
-  font-family: "Roboto", sans-serif;
   color: rgb(53, 53, 53);
   font-size: 2.5rem;
   display: flex;
   align-items: center;
 }
-
+/* End of Landing */
+/* Features */
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -163,11 +137,9 @@
   align-items: center;
   margin-top: 25px;
 }
-
 .card-container a {
   text-decoration: none;
 }
-
 .card {
   padding: 24px;
   height: 255px;
@@ -179,25 +151,19 @@
   flex-direction: column;
   transition: all 0.3s ease-in-out;
 }
-
 .card:hover {
   cursor: pointer;
   transform: scale(1.05);
 }
-
 .card h2 {
-  font-family: "Roboto", sans-serif;
   color: #fff;
   font-size: 1.8rem;
 }
-
 .card img {
   width: 300px;
   align-self: flex-end;
 }
-
 .orange-button {
-  font-family: "Roboto", sans-serif;
   padding: 20px;
   background-color: #f58220;
   border-radius: 10px;
@@ -207,20 +173,23 @@
   transition: 0.3s ease-in-out;
   align-self: center;
 }
-
+.orange-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+/* End of Features */
+/* gram */
 .img-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 25px;
 }
-
 .gram-item {
   height: 250px;
   width: 250px;
   background-size: contain;
 }
-
 .gram-item-overlay {
   display: flex;
   flex-direction: column;
@@ -233,55 +202,44 @@
   opacity: 0;
   transition: 0.4s ease-in-out;
 }
-
 .gram-item-overlay h4 {
   margin: 5px;
   font-family: "Source Sans Pro", sans-serif;
 }
-
 .gram-item:hover .gram-item-overlay {
   opacity: 0.8;
   cursor: pointer;
 }
-
 .gram-item-comment {
   padding: 20px;
 }
-
 .likes-comments {
   display: flex;
   align-items: center;
 }
-
+/* End of gram */
+/* location */
 .location-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-
 .location-container div {
   margin: 15px;
 }
-
 .marker {
-  /* Set the marker size here */
   width: 1.4rem;
   height: 1.4rem;
   border-radius: 2rem;
-  /* Set the marker color here */
   background: #f58220;
   position: absolute;
   top: 50%;
   left: 50%;
-  /* transform: translate(-50%, -50%); */
   display: inline-block;
   border-bottom-right-radius: 0;
   transform: rotate(45deg);
-
-  /* optional fanciness */
   border: 1px solid #f58220;
 }
-/* inner circle (optional if you don't need the central dot) */
 .marker::before {
   content: "";
   background: white;
@@ -292,12 +250,9 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-
-  /* optional fanciness */
   border: 1px solid #f58220;
   box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem rgba(0, 0, 0, 0.1);
 }
-/* shadow (optional if you don't need a shadow) */
 .marker::after {
   content: "";
   background: rgba(128, 128, 128, 0.2);
@@ -309,13 +264,11 @@
   left: 100%;
   transform: translate(-50%, -50%) rotate(45deg) scaleX(0.5);
 }
-
 .location-map {
   height: 400px;
   width: 500px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-
 .location-card {
   font-family: "Source Sans Pro", sans-serif;
   height: 400px;
@@ -326,12 +279,11 @@
   flex-direction: column;
   border-radius: 10px;
 }
-
 .location-card h1 {
-  font-family: "Roboto", sans-serif;
   color: rgb(53, 53, 53);
 }
-
+/* End of Location */
+/* Footer  */
 .footer {
   display: flex;
   flex-wrap: wrap;
@@ -340,7 +292,6 @@
   align-items: center;
   padding: 70px;
 }
-
 .footer-links {
   display: flex;
   flex-direction: column;
@@ -348,7 +299,6 @@
   align-items: center;
   flex: 3;
 }
-
 .footer-copyright {
   text-align: center;
   max-width: 500px;
@@ -356,13 +306,11 @@
   margin-top: 10px;
   font-size: 12px;
 }
-
 .footer-section-right {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .footer li {
   text-decoration: none;
   list-style: none;
@@ -370,22 +318,18 @@
   margin-top: 10px;
   font-size: 1.2rem;
 }
-
 .footer li a {
   color: #fff;
   text-decoration: none;
-  font-family: "Roboto", sans-serif;
   transition: all 0.4s ease;
 }
 .footer li a:hover {
   cursor: pointer;
 }
-
 .footer-icons {
   display: flex;
   justify-content: space-evenly;
 }
-
 .footer-icons span {
   display: flex;
   color: #fff;
@@ -397,21 +341,19 @@
   margin-left: 10px;
   margin-right: 10px;
 }
-
 .footer-icons span:hover {
   cursor: pointer;
 }
-
+/* End of Footer */
+/* Menu */
 .menu {
   display: flex;
   min-height: 100vh;
   overflow-x: hidden;
 }
-
 .category-menu {
   flex: 1;
 }
-
 .category-menu-mobile {
   display: none;
   align-items: center;
@@ -420,23 +362,18 @@
   background-color: #fcfaed;
   border-bottom: solid black 1px;
 }
-
 .category-menu-mobile h5 {
   margin-left: 15px;
   font-size: 1.2rem;
   color: rgb(53, 53, 53);
-  font-family: "Roboto", sans-serif;
 }
-
 .category-menu-mobile-icon {
   margin-right: 25px;
   font-size: 1.2rem;
 }
-
 .category-menu-mobile:hover {
   cursor: pointer;
 }
-
 .category-item {
   height: 100px;
   border-right: 1px solid rgb(53, 53, 53);
@@ -449,31 +386,22 @@
   padding: 10px;
   transition: all 0.2s ease-in-out;
 }
-
 .category-item:hover {
   opacity: 1;
   cursor: pointer;
 }
-
 .category-item:focus {
   background-color: #448faf;
 }
-
-.category-item h4 {
-  font-family: "Roboto", sans-serif;
-}
-
 .category-item img {
   height: 100px;
 }
-
 .display-menu {
   flex: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .menu-box {
   width: 1100px;
   display: flex;
@@ -482,7 +410,6 @@
   justify-content: center;
   align-items: center;
 }
-
 .menu-title {
   margin-top: 25px;
   display: flex;
@@ -492,19 +419,15 @@
   align-items: center;
   text-align: center;
 }
-
 .menu-title h1 {
   font-size: 3rem;
-  font-family: "Roboto", sans-serif;
   align-self: center;
   color: rgb(53, 53, 53);
 }
-
 .back-btn {
   align-self: flex-start;
   margin-left: 5%;
 }
-
 .back-btn a {
   display: flex;
   align-items: center;
@@ -512,28 +435,19 @@
   color: rgb(53, 53, 53);
   font-size: 2rem;
 }
-
 .back-arrow {
   transition: all 0.2s ease-in-out;
 }
-
-#back-menu {
-  visibility: hidden;
-  font-family: "Roboto", sans-serif;
+.back-btn span {
   color: rgb(53, 53, 53);
   font-size: 1.4rem;
+  margin-left: 5px;
 }
-
-.back-btn a:hover #back-menu {
-  visibility: visible;
-}
-
 .menu-title img {
   transform: scale(0.7) rotate(2deg);
   width: 300px;
   margin-top: -10px;
 }
-
 .menu-description {
   display: flex;
   flex-wrap: wrap;
@@ -542,7 +456,6 @@
   line-height: 2rem;
   text-align: center;
 }
-
 .card-group {
   display: flex;
   flex-direction: row;
@@ -551,7 +464,6 @@
   margin-top: 10px;
   margin-bottom: 30px;
 }
-
 .menu-card {
   width: 280px;
   min-height: 308px;
@@ -564,70 +476,62 @@
   margin: 10px;
   padding: 20px;
 }
-
 .menu-card h2 {
-  font-family: "Roboto", sans-serif;
   color: rgb(53, 53, 53);
 }
-
+.menu-card p {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+}
 .menu-card-descrip {
   color: #448faf;
 }
-
 .menu-card img {
   margin-top: auto;
 }
-
 .menu-card-add {
   align-self: center;
   text-align: center;
   background-color: #f58220;
-  font-family: "Roboto", sans-serif;
   color: #fff;
   padding: 5px;
   width: 125px;
   border: solid #f58220 1px;
   border-radius: 10px;
 }
-
 .menu-card-add:hover {
   cursor: pointer;
 }
-
 .menu-card-added {
   text-align: center;
   align-self: center;
-  font-family: "Roboto", sans-serif;
   color: #448faf;
   width: 125px;
   padding: 5px;
   border: solid #448faf 1px;
   border-radius: 10px;
 }
-
 .menu-mobile {
   display: none;
 }
-
 .menu-mobile div {
   height: 50px;
   width: 100%;
   border-bottom: solid black 1px;
   opacity: 0.7;
 }
-
 .menu-mobile div:hover {
   cursor: pointer;
   opacity: 1;
 }
-
+/* End of Menu */
+/* Order */
 .order-page {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .orders-container {
   display: flex;
   flex-wrap: wrap;
@@ -636,57 +540,46 @@
   min-height: 40vh;
   margin: 40px 0px 30px 0px;
 }
-
 .order-item {
   display: flex;
   flex-direction: column;
   padding: 10px;
   border-bottom: rgb(53, 53, 53, 0.5) solid 1px;
 }
-
 .no-order {
   align-self: center;
   text-align: center;
 }
-
 .remove-order {
   display: flex;
   justify-content: flex-start;
   color: #448faf;
   font-size: 1.5rem;
 }
-
 .remove-order:hover {
   cursor: pointer;
 }
-
 .order-content {
   display: flex;
   justify-content: space-around;
 }
-
 .order-name {
   display: flex;
   width: 400px;
   align-items: center;
 }
-
 .order-name img {
   height: 80px;
 }
-
 .order-name h2 {
-  font-family: "Roboto", sans-serif;
   font-size: 1.1rem;
 }
-
 .order-qty {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   width: 100px;
 }
-
 .qty-container {
   background-color: #448faf;
   display: flex;
@@ -694,23 +587,18 @@
   border-radius: 2px;
   color: #fff;
 }
-
 .qty-container:hover {
   cursor: pointer;
 }
-
 .order-title {
-  font-family: "Roboto", sans-serif;
   text-decoration: underline;
   margin-bottom: 25px;
 }
-
 .order-total {
   display: flex;
   justify-content: center;
   width: 100px;
 }
-
 .place-order {
   display: flex;
   justify-content: space-evenly;
@@ -725,18 +613,16 @@
   color: #fff;
   border-radius: 10px;
 }
-
 .place-order:hover {
   cursor: pointer;
 }
-
 .place-order div {
   display: flex;
   justify-content: center;
-  font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
 }
-
+/* End of Order */
+/* Membership */
 .membership-top {
   height: 85vh;
   background-color: rgb(53, 53, 53);
@@ -744,7 +630,6 @@
   flex-direction: column;
   align-items: center;
 }
-
 .membership-top h1 {
   color: #fff;
   font-family: "Ultra", serif;
@@ -752,22 +637,19 @@
   margin-top: 60px;
   font-size: 4.8rem;
 }
-
 .membership-top p {
+  font-family: "Source Sans Pro", sans-serif;
   text-align: center;
   margin-top: 25px;
   width: 550px;
   color: #fff;
-  font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
   line-height: 2rem;
 }
-
 .join-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
   margin-top: 15px;
   height: 50px;
@@ -781,7 +663,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
   margin-top: 15px;
   height: 50px;
@@ -791,19 +672,16 @@
   color: #353535;
   transition: all 0.2s ease-in-out;
 }
-
 .join-btn-second:hover {
   color: #fff;
   background-color: #353535;
   cursor: pointer;
 }
-
 .join-btn:hover {
   color: #fff;
   background-color: #f58220;
   cursor: pointer;
 }
-
 .membership-bot {
   background-color: #f58220;
   display: flex;
@@ -811,16 +689,12 @@
   align-items: center;
   padding: 25px;
 }
-
 .membership-bot h1 {
   text-align: center;
   margin-top: 40px;
   color: rgb(53, 53, 53);
-  font-family: "Roboto", sans-serif;
   font-size: 2.2rem;
 }
-
-/* css from shapediver.app for curve 1*/
 .curve {
   position: absolute;
   bottom: 0;
@@ -830,21 +704,15 @@
   line-height: 0;
   transform: rotate(180deg);
 }
-
 .curve svg {
   position: relative;
   display: block;
   width: calc(185% + 1.3px);
   height: 275px;
 }
-
 .curve .shape-fill {
   fill: #f58220;
 }
-/* end */
-
-/* Curve 2 */
-
 .curve-two {
   position: absolute;
   bottom: 0;
@@ -853,25 +721,21 @@
   overflow: hidden;
   line-height: 0;
 }
-
 .curve-two svg {
   position: relative;
   display: block;
   width: calc(161% + 1.3px);
   height: 99px;
 }
-
 .curve-two.shape-fill {
   fill: #353535;
 }
-
 .reward-grp {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
-
 .reward {
   display: flex;
   flex-direction: column;
@@ -888,22 +752,18 @@
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   border-radius: 10px;
 }
-
 .reward h2 {
   color: #fff;
-  font-family: "Roboto", sans-serif;
 }
-
 .reward p {
   color: #fff;
+  font-family: "Source Sans Pro", sans-serif;
   text-align: center;
 }
-
 .reward-img {
   font-size: 6rem;
   color: #448faf;
 }
-
 .order-modal {
   position: fixed;
   left: 0;
@@ -917,7 +777,6 @@
   align-items: center;
   justify-content: center;
 }
-
 .modal-content {
   display: flex;
   flex-direction: column;
@@ -927,7 +786,6 @@
   border-radius: 10px;
   padding: 5px;
 }
-
 .modal-header {
   align-self: flex-end;
   margin-right: 5px;
@@ -935,43 +793,37 @@
   font-size: 1.4rem;
   color: #448faf;
 }
-
 .modal-title {
   display: flex;
   width: 100%;
   justify-content: flex-start;
   border-bottom: rgb(53, 53, 53) solid 1px;
 }
-
 .modal-title h2 {
-  font-family: "Roboto", sans-serif;
   color: rgb(53, 53, 53);
 }
-
 .modal-total {
   align-self: flex-end;
   margin-top: 15px;
 }
-
 .modal-order {
   display: flex;
 }
-
 .modal-order h4 {
+  font-family: "Source Sans Pro", sans-serif;
   align-self: flex-start;
   width: 220px;
   font-size: 0.8rem;
 }
 .modal-order h5 {
+  font-family: "Source Sans Pro", sans-serif;
   width: 30px;
   font-size: 0.8rem;
 }
-
 .modal-orders {
   display: flex;
   flex-direction: column;
 }
-
 .modal-text {
   display: flex;
   width: 90%;
@@ -979,62 +831,47 @@
   justify-content: flex-start;
 }
 .modal-text h3 {
-  font-family: "Roboto", sans-serif;
   color: rgb(53, 53, 53);
   font-size: 1rem;
 }
-
 .modal-text h4 {
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 0.8rem;
 }
-
 .modal-instructions {
   padding: 5px;
   font-size: 0.8rem;
   align-self: flex-start;
 }
-
 .payment {
   display: flex;
   width: 100%;
   flex-direction: column;
   align-self: flex-start;
 }
-
 .payment-selector {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-
 .payment-selector h2 {
-  font-family: "Roboto", sans-serif;
   margin-left: 3px;
   color: rgb(53, 53, 53);
 }
-
 .payment-selector:hover {
   cursor: pointer;
 }
-
 .payment-form {
   display: flex;
   flex-direction: column;
   padding: 5px;
 }
-
-.payment-form label {
-  font-family: "Roboto", sans-serif;
-}
-
 .payment-form input {
   padding: 5px;
 }
-
 .payment-form-cvc {
   display: flex;
 }
-
 .payment-btn {
   margin-top: 5px;
   padding: 10px;
@@ -1042,17 +879,13 @@
   background-color: #f58220;
   border: none;
   color: #fff;
-  font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
 }
-
 .payment-btn {
   cursor: pointer;
 }
-
 .cancel-payment {
   text-align: center;
-  font-family: "Roboto", sans-serif;
   margin-top: 5px;
   padding: 10px;
   border-radius: 10px;
@@ -1060,17 +893,14 @@
   color: rgb(194, 49, 49);
   transition: all 0.2s ease-in-out;
 }
-
 .cancel-payment:hover {
   cursor: pointer;
   color: #fff;
   background-color: rgb(194, 49, 49);
 }
-
 .close-modal:hover {
   cursor: pointer;
 }
-
 .delivery {
   margin-top: 40px;
   min-height: 40vh;
@@ -1079,17 +909,13 @@
   flex-direction: column;
   align-items: center;
 }
-
 .delivery h1 {
-  font-family: "Roboto", sans-serif;
   font-size: 2.7rem;
   color: rgb(53, 53, 53);
 }
-
 .delivery-options {
   display: flex;
 }
-
 .delivery-btn {
   margin-top: 25px;
   margin: 10px;
@@ -1097,15 +923,12 @@
   background-color: rgb(53, 53, 53);
   border: none;
   border-radius: 10px;
-  font-family: "Roboto", sans-serif;
   font-size: 1.8rem;
   color: #fff;
 }
-
 .delivery-btn:hover {
   cursor: pointer;
 }
-
 .delivery-form {
   display: flex;
   flex-direction: column;
@@ -1113,49 +936,36 @@
   margin-bottom: 20px;
 }
 
-.delivery-form label {
-  font-family: "Roboto", sans-serif;
-}
-
 .delivery-form input {
   padding: 10px;
   margin-bottom: 10px;
 }
-
 .form-err-msg {
   font-size: 0.8rem;
   color: rgb(194, 49, 49);
-  font-family: "Roboto", sans-serif;
 }
-
 .address-err-msg {
   align-self: flex-start;
   font-size: 1.2rem;
   color: rgb(194, 49, 49);
-  font-family: "Roboto", sans-serif;
 }
-
 @media only screen and (max-width: 1375px) {
   .menu-box {
     width: 720px;
   }
 }
-
 @media only screen and (max-width: 985px) {
   .menu-box {
     width: 620px;
   }
 }
-
 @media only screen and (max-width: 900px) {
   .title h1 {
     font-size: 4rem;
   }
-
   .bji-icon-container {
     flex: 2;
   }
-
   #hidden {
     position: absolute;
     z-index: 2;
@@ -1168,7 +978,6 @@
     flex-direction: column;
     transition: 0.4s ease-in-out;
   }
-
   #mobile-menu {
     display: flex;
     flex-direction: column;
@@ -1183,76 +992,61 @@
     background-color: #fcfaed;
     transition: 0.4s ease-in-out;
   }
-
   .nav-links {
     display: none;
   }
-
   .nav-burger-container {
     display: block;
     flex: 1;
   }
-
   .location-map,
   .location-card {
     height: 350px;
     width: 450px;
   }
-
   .footer {
     flex-direction: column;
     justify-content: space-around;
   }
-
   .footer-icons {
     margin-top: 20px;
   }
-
   .menu {
     flex-direction: column;
   }
-
   .category-menu {
     display: none;
   }
   .category-menu-mobile {
     display: flex;
   }
-
   .sign-btn {
     width: 300px;
   }
   .join-btn {
     width: 300px;
   }
-
   .membership-top h1 {
     font-size: 3rem;
   }
 }
-
 @media only screen and (max-width: 680px) {
   .menu-box {
     width: 400px;
   }
-
   .membership-top h1 {
     font-size: 2.2rem;
   }
-
   .membership-top p {
     font-size: 1.1rem;
     width: 400px;
   }
-
   .footer-copyright {
     width: 280px;
   }
-
   .bji-icon-container p {
     font-size: 1rem;
   }
-
   .order-name {
     width: 300px;
   }
@@ -1262,12 +1056,10 @@
   .place-order {
     width: 400px;
   }
-
   .delivery-form {
     width: 400px;
   }
 }
-
 @media only screen and (max-width: 480px) {
   .title h1 {
     font-size: 3rem;
@@ -1276,21 +1068,17 @@
     height: 50px;
     width: 50px;
   }
-
   .menu-title img {
     width: 200px;
   }
-
   .card {
     padding: 24px;
     height: 205px;
     width: 250px;
   }
-
   .card img {
     width: 200px;
   }
-
   .featured-title {
     font-size: 1.8rem;
   }
@@ -1299,55 +1087,54 @@
     height: 250px;
     width: 300px;
   }
-
   .menu-title h1 {
     font-size: 1.9rem;
   }
-
   .menu-description {
     font-size: 1.1rem;
     width: 300px;
   }
-
   .membership-top h1 {
     font-size: 1.9rem;
   }
-
   .membership-top p {
     font-size: 12px;
     width: 300px;
   }
-
   .menu-card {
     width: 260px;
     padding: 18px;
   }
-
   .footer {
     padding: 0px;
   }
-
   .order-name {
     align-items: flex-end;
     width: 170px;
   }
-
   .order-name h2 {
     font-size: 14px;
   }
-
   .order-qty {
     width: 70px;
   }
-
   .place-order {
     width: 300px;
   }
-
   .place-order div {
     font-size: 1rem;
   }
   .delivery-form {
+    width: 300px;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .title h1 {
+    font-size: 2rem;
+  }
+  .location-map,
+  .location-card {
+    height: 250px;
     width: 300px;
   }
 }
