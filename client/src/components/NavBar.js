@@ -60,9 +60,9 @@ const NavBar = ({ num }) => {
         </ul>
         <div className="nav-burger-container">
           <div onClick={() => toggleNavMenu()} className="nav-burger">
-            <div className="line-1"></div>
-            <div className="line-2"></div>
-            <div className="line-3"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
           </div>
         </div>
       </div>

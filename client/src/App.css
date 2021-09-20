@@ -66,9 +66,7 @@
   transform: scale(1.05);
 }
 
-.line-1,
-.line-2,
-.line-3 {
+.line {
   width: 25px;
   height: 3px;
   margin: 5px;
@@ -799,8 +797,6 @@
   background-color: #353535;
   cursor: pointer;
 }
-
-
 
 .join-btn:hover {
   color: #fff;
