@@ -56,7 +56,6 @@ const Membership = () => {
           now.
         </p>
         <div className="join-btn">Join Now</div>
-        <div className="sign-btn">Sign In</div>
       </div>
       <div className="curve">
         <svg
@@ -84,7 +83,7 @@ const Membership = () => {
             );
           })}
         </div>
-        <div className="sign-btn btn-org">Join Now</div>
+        <div className="join-btn-second">Join Now</div>
       </div>
     </>
   );
