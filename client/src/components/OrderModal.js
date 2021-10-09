@@ -13,9 +13,8 @@ const OrderModal = ({
   total,
   errors,
   cancel,
-  setCancel
+  setCancel,
 }) => {
-
   useEffect(() => {
     if (Object.keys(errors).length !== 0) {
       setCancel(true);
