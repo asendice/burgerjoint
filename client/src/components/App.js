@@ -32,10 +32,6 @@ const App = () => {
     setOrders([...orders, order]);
   };
 
-  useEffect(() => {
-    console.log(selectedCategory, "selectedCategory");
-  }, [selectedCategory]);
-
   const updateOrderQty = (qty, name) => {
     const updateOrders = [...orders];
     const index = orders.findIndex((order) => order.name === name);
@@ -44,7 +40,6 @@ const App = () => {
   };
 
   const removeOrder = (id, name) => {
-    console.log(name, "name");
     setOrders(
       orders.filter((order) => {
         return order.name !== name;
