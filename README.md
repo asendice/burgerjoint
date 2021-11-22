@@ -6,7 +6,7 @@ Burgerjoint is a fictional burger restaurant website that showcases tons of uniq
 ## Installation
 
 Live Demo:
-https://burgerjoint.herokuapp.com
+https://burgerjoint-dt.herokuapp.com
 
 ```
 # Clone this repository

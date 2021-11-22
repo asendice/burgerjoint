@@ -27,6 +27,35 @@ app.use("/api", authRoutes);
 
 const port = process.env.PORT;
 
+// need for production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/client/build")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.send("Api running");
+  });
+}
+
+const whitelist = ["http://localhost:3000", "https://burgerjoint-dt.herokuapp.com/api"];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    console.log("** Origin of request " + origin);
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      console.log("Origin acceptable");
+      callback(null, true);
+    } else {
+      console.log("Origin rejected");
+      callback(!new Error("Not allowed by CORS "));
+    }
+  },
+};
+app.use(cors(corsOptions));
+
 app.listen(port, () => {
   console.log("Server is live on port", port);
 });

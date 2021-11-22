@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import baseURL from "../apis/backendApi";
 import { BrowserRouter, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
@@ -53,8 +53,8 @@ const App = () => {
   };
 
   const getMenu = async () => {
-    await axios
-      .get("http://localhost:8000/api/menu")
+    await backendApi
+      .get("/menu")
       .then((response) => {
         if (response) {
           return response;
@@ -70,8 +70,8 @@ const App = () => {
   };
 
   const getCategories = async () => {
-    await axios
-      .get("http://localhost:8000/api/category")
+    await backendApi
+      .get("/category")
       .then((response) => {
         if (response) {
           console.log(response);
