@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import baseURL from "../apis/backendApi";
+import backendApi from "../apis/backendApi";
 import { BrowserRouter, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
